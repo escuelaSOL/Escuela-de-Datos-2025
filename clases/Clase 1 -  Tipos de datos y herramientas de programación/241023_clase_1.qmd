@@ -1,0 +1,101 @@
+---
+title: "Escuela de datos 2025"
+lang: es
+subtitle: "Tipos de datos y herramientas de programación"
+author: "Fundación SOL"
+date: 05/05/2025
+date-format: "dddd, D MMM , YYYY"
+format:
+  revealjs:
+    theme: blood
+    incremental: true
+    logo: img\logoblanco.png
+project:
+  type: website
+  output-dir: docs
+---
+## ¿Quiénes somos?
+  
+ [Fundación SOL](https://fundacionsol.cl)
+
+- **Más de 17 años** de trabajo colectivo autogestionado.
+- Institución que busca aportar al **debate crítico**.
+- Trabajamos principalmente en actividades de **investigación y acción con organizaciones de trabajadores**. 
+- Realizamos clases en la **academia** y estamos en **constante autoformación**.
+
+## Breve introducción a la Escuela de Datos
+
+Esta Escuela tiene por objetivo compartir conocimientos para desarrollar o mejorar el proceso de trabajo con datos que deben enfrentar diversos trabajadores o estudiantes en diferentes contextos cotidianos o periódicos.
+
+Nos enfocaremos en el uso del programa `R`, pero también conoceremos maneras para crear y publicar reportes utilizando `Quarto`.
+
+## Breve introducción a la Escuela de Datos
+
+En estas clases compartiremos los aprendizajes provenientes de diversas fuentes, como la academia, literatura y procesos de autoaprendizaje. Como equipo de la Fundación SOL utilizamos diversas tecnologías de información, comunicaciones y cálculo que nos permiten investigar, revelar y aportar a las transformaciones que junto con sindicatos y otras organizaciones consideramos necesarias. 
+
+## ¿Qué es `R` y RStudio?
+
+Básicamente `R` es el motor que permite que funcione lo que queremos hacer. En otras palabras, es el lenguaje de programación sobre el cual realizaremos nuestras tareas. **RStudio** en cambio es una interfaz, *un programa* podríamos decir, diseñado por una compañia (Posit) que permite su uso gratuito. Este programa sirve como un editor, visualizador y compilador del lenguaje R. 
+
+# ¿Se entiende? {background-image="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTlkM3FkcnVkbWZ2c3phMmk5OHl2bjBoajJ0aHN6cWwxMGRpZ3hjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cRq8TJsIKmQRG/giphy.gif" background-size="contain"}
+
+## `R` y trabajo con datos
+
+El lenguaje R, creado en la década de 1990 por **R**oss Ihaka y **R**obert Gentleman, emerge en un contexto de expansión del dinero disponible en los hogares, aceleración del consumo y la llamada revolución informática. R fue diseñado como una herramienta para el análisis estadístico y la visualización de datos, promoviendo una democratización del conocimiento técnico. Sin embargo, este objetivo se ha concentrado en el uso académico.
+
+
+## ¿Qué es `Quarto`?
+
+Quarto es un sistema de código abierto de publicaciones técnicas y científicas. 
+Esta herramienta permite publicar tus reportes, presentaciones , blogs o sitios web, de forma gratuita en la red, con ciertas limitaciones según tus propias habilidades en el uso de lenguajes de programación. 
+
+
+## Para conocer más detalles y profundizar sobre `Quarto` 
+
+No olvides acceder a más información en: [Quarto](https://quarto.org) y [Quarto Pub](https://quartopub.com/)
+ 
+ 
+ 
+ 
+# ¿Trabajaremos con código en las clases? {background-image="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWwzNjU0b3Z4ZHhnajZxcGY5Z2l2NGhvZTBjaG4wM3RibTVwZDNoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/raznzN3IAUzW0jI2We/giphy.gif" background-size="contain"}
+
+## Recuerda: Materiales de apoyo
+
+- Documentación de cada paquete o del trabajo que estás revisando
+- Material de clases y la **Guía del curso** `PrimerosPasosEnR`  [disponible acá](https://escuelafundacionsol.quarto.pub/escueladedatosfsol/)
+
+
+## ¿Cómo se organizarán las clases?
+
+[Detalle de clases](https://aulavirtual.escuelasol.cl/escuela-de-datos#scrollTop=0)
+
+Cada semana,el día lunes a las 18:30 habrá clases sincrónicas sobre el tema correspondiente. Estas serán clases teóricas con momentos de práctica, pero se buscará instalar las bases de los conceptos a aprender.
+
+Los días sábado a las 10 am, se realizarán las clases prácticas, sobre los mismos contenidos vistos el lunes, pero con trabajo en programación y ejemplos reales.
+
+
+
+
+## Certificación 
+
+::: {.fragment .highlight-red}
+IMPORTANTE: Se emitirán sólo dos tipos de certificado
+::: 
+
+a) Participación: Para acceder debe asistir al menos al 70% de las clases sincrónicas. 
+
+b) Participación y aprobación: Para acceder debe asistir al 70% de las clases sincrónicas y realizar el trabajo final que se informará en la clase del 7 de junio de 2025 . 
+
+* La asistencia se registrará al final de cada clase mediante un formulario que también servirá para evaluar la misma. Quienes no puedan asistir, deben dar aviso oportuno (antes de la clase) para registrarlo. 
+
+## Videos de las clases
+
+Les enviaremos un enlace con contraseña para que descarguen los videos de clase. 
+
+::: {.fragment .highlight-red}
+El material de estos vídeos es para fines estrictamente relacionados con el curso. No recomendamos que sea compartido a quienes no asistieron a la clase, pues implica falta de contexto. Tampoco autorizamos su difusión en plataformas distintas a las que hemos dispuesto para ello.
+::: 
+
+Como institución realizamos clases abiertas y publicamos otro tipo de contenidos que se relacionan con estas temáticas y están pensados para libre difusión. 
+
+
