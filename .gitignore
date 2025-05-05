@@ -1,0 +1,26 @@
+# Archivos de R y RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Rproj
+
+# Archivos de Quarto / Bookdown / RMarkdown
+*.html
+*.pdf
+*.docx
+_cache/
+_book/
+_output/
+_publish.yml
+
+# Datos sensibles o de trabajo
+*.csv
+*.xlsx
+*.sav
+*.rds
+*.rda
+
+# Otros
+.DS_Store
+Thumbs.db
