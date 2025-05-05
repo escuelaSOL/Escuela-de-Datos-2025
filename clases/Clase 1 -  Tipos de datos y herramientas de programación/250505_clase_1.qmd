@@ -8,12 +8,16 @@ date-format: "dddd, D MMM , YYYY"
 format:
   revealjs:
     theme: blood
+    css: styles.css
+    highlight-style: dracula
     incremental: true
     logo: img\logoblanco.png
+    echo: true
 project:
   type: website
   output-dir: docs
 ---
+
 ## ¿Quiénes somos?
   
  [Fundación SOL](https://fundacionsol.cl)
@@ -55,14 +59,12 @@ Esta herramienta permite publicar tus reportes, presentaciones , blogs o sitios 
 No olvides acceder a más información en: [Quarto](https://quarto.org) y [Quarto Pub](https://quartopub.com/)
  
  
- 
- 
-# ¿Trabajaremos con código en las clases? {background-image="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWwzNjU0b3Z4ZHhnajZxcGY5Z2l2NGhvZTBjaG4wM3RibTVwZDNoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/raznzN3IAUzW0jI2We/giphy.gif" background-size="contain"}
+## ¿Trabajaremos con código en las clases? {background-image="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWwzNjU0b3Z4ZHhnajZxcGY5Z2l2NGhvZTBjaG4wM3RibTVwZDNoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/raznzN3IAUzW0jI2We/giphy.gif" background-size="contain"}
 
 ## Recuerda: Materiales de apoyo
 
 - Documentación de cada paquete o del trabajo que estás revisando
-- Material de clases y la **Guía del curso** `PrimerosPasosEnR`  [disponible acá](https://escuelafundacionsol.quarto.pub/escueladedatosfsol/)
+- Material de clases y la **Guía del curso** `PrimerosPasosEnR`  [disponible acá](https://escuelasol.quarto.pub/escueladedatosfsol/)
 
 
 ## ¿Cómo se organizarán las clases?
@@ -98,4 +100,455 @@ El material de estos vídeos es para fines estrictamente relacionados con el cur
 
 Como institución realizamos clases abiertas y publicamos otro tipo de contenidos que se relacionan con estas temáticas y están pensados para libre difusión. 
 
+# Clase 1
 
+
+## ¿Qué son los datos?
+
+Los datos son unidades de información que registran aspectos de la realidad. Pueden ser cuantitativos (cuantificar) o cualitativos (cualidad).
+
+Por ejemplo:
+
+- En salud: edades, pesos, diagnósticos.
+- En educación: asistencia, notas, pruebas de medición.
+- En administración: costos, ingresos, tiempos de entrega.
+- En ciencias sociales: encuestas, entrevistas, observaciones.
+
+
+## Datos cuantitativos
+
+Miden cantidades, se expresan en números, por ello pueden sumarse, promediarse, etc.
+
+- Edad de las personas
+- Ingreso mensual
+- Temperatura ambiental
+- Puntaje en una prueba
+- Nivel de glucosa en sangre
+- Distancia recorrida
+
+## Datos Cualitativos
+
+Describen cualidades, categorías o características. No tienen valor numérico directo.
+
+- Género (femenino, masculino, no binario...)
+- Profesión (profesora, enfermero, técnico...)
+- Estado civil (soltero, casado, viudo...)
+- Nivel educativo (básico, medio, superior)
+- Región o país de origen
+- Opiniones (satisfecho, indiferente, insatisfecho)
+
+## Análisis de datos
+
+El análisis de datos es el proceso de examinar, limpiar, transformar e interpretar información con el objetivo de responder preguntas, descubrir patrones o tomar decisiones.
+
+Es una forma estructurada de mirar los datos para entender qué nos están diciendo.
+
+
+## Procesamiento de datos
+
+Una vez que tenemos datos, necesitamos instrucciones claras para procesarlos y obtener resultados útiles.
+
+Una secuencia de pasos lógicos para analizarlos, ordenarlos, filtrarlos o calcular algo con ellos. Esos pasos son lo que llamamos un algoritmo.
+
+## Algoritmo
+
+::: {.columns}
+::: {.column}
+```
+resultado = función (entrada)
+```
+
+![](img/algortimo.png){width="100%"}
+:::
+
+::: {.column}
+Un algoritmo es una serie de instrucciones paso a paso para resolver un problema o realizar una tarea.
+:::
+:::
+
+
+## Función
+
+::: {.columns}
+::: {.column}
+
+![](img/funcion.png){width="100%"}
+:::
+
+::: {.column}
+Una función es una forma concreta de escribir y reutilizar ese algoritmo dentro de un programa.
+:::
+:::
+
+## Ejemplo de algoritmo y función
+
+![](img/ejemplo_alfunc.jpg){width="100%"}
+
+# Conceptos clave
+
+## Tipos de datos
+
+Cuando usamos funciones, no solo nos importa qué hacen, sino también con qué trabajan.
+
+Para que un algoritmo funcione correctamente, los datos que le entregamos deben tener el tipo adecuado.
+
+```{r}
+#| eval: false
+#| echo: true
+
+sumar <- function(a, b) {
+    a + b
+}
+
+sumar(3, 5) # Funciona (números)
+sumar("hola", 5) # Error: no se pueden sumar texto y número
+
+```
+
+## Tipos de datos
+
+```{r}
+#| eval: false
+#| echo: true
+
+Numérico # numeric
+Entero # integer
+Lógico # logical
+Texto # character
+Factor # factor
+
+```
+
+## Tipos de datos
+
+Ejemplo de dato numérico:
+
+```{r}
+#| echo: true
+
+# Numérico
+a <- 3.14
+class(a) # numeric
+
+```
+
+La función `class()` permite conocer la clase, o el **tipo** al que pertenece el dato. 
+
+## Tipos de datos
+
+```{r}
+#| echo: true
+#| class: "large-code"
+# Entero
+b <- 10
+class(b) # integer
+
+```
+
+
+## Tipos de datos
+ 
+```{r}
+#| echo: true
+# Lógico
+c <- TRUE
+class(c) # logical
+
+c <- FALSE
+class(c) # logical
+
+```
+
+## Tipos de datos
+
+```{r}
+#| echo: true
+# Texto
+d <- "Hola mundo"
+class(d) # character
+
+```
+
+
+## Tipos de datos
+
+```{r}
+#| echo: true
+# Factor
+colores <- factor(c("rojo", "verde", "azul", "rojo"))
+class(colores) # factor
+levels(colores) # rojo, verde, azul
+
+```
+
+## Valores especiales
+
+
+```{r}
+#| echo: true
+
+NA
+
+NULL
+
+NaN
+
+Inf
+```
+
+## Valores especiales 
+
+```{r}
+#| eval: false
+#| echo: true
+# Not Available
+x <- c(1, 2, NA, 4)
+is.na(x) # TRUE en la tercera posición
+
+```
+
+## Valores especiales 
+
+```{r}
+#| eval: false
+#| echo: true
+# Not a Number
+x <- 0 / 0
+is.nan(x) # TRUE
+is.na(x) # TRUE (porque NaN es un tipo especial de NA)
+
+```
+
+## Valores especiales
+
+```{r}
+#| eval: false
+#| echo: true
+
+# NULL
+x <- NULL
+length(x) # 0
+is.null(x) # TRUE
+```
+
+
+## Valores especiales
+
+```{r}
+#| eval: false
+#| echo: true
+# Infinito
+x <- 1 / 0 # Inf
+is.infinite(x) #  TRUE
+
+```
+
+## Estructura de datos
+
+Abordamos distintos tipos de datos individuales como números, textos o valores lógicos, etc, pero en la práctica, rara vez analizamos un solo dato. 
+
+Lo más común es trabajar con conjuntos de datos como: 
+
+- Registros de asistencia
+- Encuestas
+
+Para eso, existen formas organizadas de agrupar múltiples datos.
+
+## Estructuras de datos
+
+- Vectores
+- Lista
+- Data.frame
+
+## Estructura de datos
+
+```{r}
+#| echo: true
+
+# Vectores
+numeros <- c(1, 2, 3, 4)
+class(numeros) # numeric
+
+palabras <- c("rojo", "verde", "azul")
+class(palabras) # character
+
+```
+
+## Estructura de datos
+
+:::{.columns}
+:::{.column}
+```{r}
+#| echo: true
+# Vectores
+
+palabras <- c("rojo", 
+              "verde", 
+              "azul")
+
+```
+:::
+:::{.column}
+![Figura de ejemplo](img/df_ejem.png){width="100%"}
+:::
+:::
+
+## Estructura de datos
+
+```{r}
+#Listas
+
+mi_lista <- list(
+             nombre = "Ana", 
+             edad = 30, 
+             colores = c("rojo", "verde"))
+
+mi_lista$edad      # Accede al elemento "edad"
+
+```
+
+## Estructura de datos
+
+```{r}
+#Data frame
+
+mi_df <- data.frame(  
+          nombre = c("Ana", "Luis"),  
+          edad = c(30, 25),  
+          estudiante = c(TRUE, FALSE))
+
+mi_df$edad         # Accede a la columna "edad"
+
+```
+
+## Estructura de datos
+
+:::{.columns}
+:::{.column}
+```{r}
+#Para acceder a la columna "edad"
+
+mi_df$edad      
+
+mi_df[,2]  # [fila,columna]
+
+```
+:::
+:::{.column}
+![Figura de ejemplo](img/midf.png)
+:::
+:::
+
+
+## Estructura de datos
+
+:::{.columns}
+:::{.column}
+¿Qué resultado dará mi_df[2,3]?
+
+```{r}
+#Para acceder a la columna "edad"
+
+mi_df$edad   
+
+mi_df[,2]  #[fila,columna]
+
+```
+:::
+:::{.column}
+![](img/df2.png)
+:::
+:::
+
+## Procesamiento de datos
+
+Conocimos las estructuras que usamos para organizar conjuntos de datos: vectores, listas, data frames...
+
+Ahora que sabemos cómo se almacenan los datos, es momento de aprender qué podemos hacer con ellos. Tener los datos es solo el primer paso: lo importante es cómo los procesamos para extraer información útil.
+
+
+## Operaciones matemáticas básicas
+
+- **+**              Suma
+- **-**              Resta
+- **\***             Multiplicación
+- **/**              División
+- **^**              Potencia
+
+
+## Operaciones matemáticas básicas
+
+```{r}
+# Suma
+
+1 + 2
+
+a <- c(1, 2, 3)
+b <- c(4, 5, 6)
+
+a + b
+
+```
+
+## Operaciones matemáticas básicas
+
+```{r}
+# resta
+
+a <- c(1, 2, 3)
+b <- c(4, 5, 6)
+
+a - b
+
+```
+
+## Operaciones matemáticas básicas
+```{r}
+# multiplicación
+
+a <- c(2, 4, 6)
+b <- c(3, 5, 1)
+
+a * b
+
+```
+
+
+## Operaciones matemáticas básicas
+
+```{r}
+# potencia
+
+base <- c(2, 3, 4)
+exponente <- c(3, 2, 1)
+
+base ^ exponente
+
+```
+
+## Operaciones estadísticas básicas
+
+- mean()        # promedio
+- median()      # mediana
+- max()         # valor máximo
+- min()         # valor mínimo
+- sum()         # suma total
+- sd()          # desviación estándar
+- length()      # cantidad de elementos
+
+
+## Operaciones lógicas y de comparación
+
+- ==            # igual
+- !=            # distinto
+- >             # mayor que
+- <             # menor que
+- &             # y lógico
+- |             # o lógico
+- !             # negación
+
+## R y RStudio
+
+`R` es un lenguaje de programación, como lo son también `Python`,  `Java` o `SQL`. R está diseñado para trabajar con datos: analizarlos, graficarlos y modelarlos.
+
+RStudio es un entorno o interfaz amigable para programar en R. Nos permite escribir código, ver los resultados, los gráficos y organizar nuestro trabajo todo en un mismo lugar.
