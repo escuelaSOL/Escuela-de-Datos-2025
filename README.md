@@ -1,4 +1,6 @@
-# 📚 Escuela de Datos 2025 - Clases para el Análisis de Datos con R
+# 📚 Escuela de Datos 2025
+## Clases para el Análisis de Datos con R
+### Fundación SOL
 
 ¡Bienvenidos/as al repositorio oficial de las clases de la segunda versión de la Escuela de Datos! 🚀
 
