@@ -25,3 +25,10 @@ Desde el 10 de mayo al 5 de julio del 2025, se actualizarán las preguntas consi
 
 [Accede aquí](https://escuelasol.github.io/entrenamiento_escuela_de_datos/)
 
+## Guía sobre tipos de datos y estructuras básicas
+
+Elaboramos un guía que te permitirá conocer aspectos relevantes sobre los conceptos básicos para conocer los tipos de datos y estructuras en R. 
+
+[Accede a la guía](https://escuelasol.github.io/guia_basica_r/)
+
+Acompaña esta guía con el texto de [PrimerosPasosEnR](https://escuelasol.quarto.pub/escueladedatosfsol/)
