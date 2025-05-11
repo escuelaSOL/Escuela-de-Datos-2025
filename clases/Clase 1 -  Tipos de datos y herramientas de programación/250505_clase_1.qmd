@@ -19,13 +19,13 @@ project:
 ---
 
 ## ¿Quiénes somos?
-  
- [Fundación SOL](https://fundacionsol.cl)
 
-- **Más de 17 años** de trabajo colectivo autogestionado.
-- Institución que busca aportar al **debate crítico**.
-- Trabajamos principalmente en actividades de **investigación y acción con organizaciones de trabajadores**. 
-- Realizamos clases en la **academia** y estamos en **constante autoformación**.
+[Fundación SOL](https://fundacionsol.cl)
+
+-   **Más de 17 años** de trabajo colectivo autogestionado.
+-   Institución que busca aportar al **debate crítico**.
+-   Trabajamos principalmente en actividades de **investigación y acción con organizaciones de trabajadores**.
+-   Realizamos clases en la **academia** y estamos en **constante autoformación**.
 
 ## Breve introducción a la Escuela de Datos
 
@@ -35,11 +35,11 @@ Nos enfocaremos en el uso del programa `R`, pero también conoceremos maneras pa
 
 ## Breve introducción a la Escuela de Datos
 
-En estas clases compartiremos los aprendizajes provenientes de diversas fuentes, como la academia, literatura y procesos de autoaprendizaje. Como equipo de la Fundación SOL utilizamos diversas tecnologías de información, comunicaciones y cálculo que nos permiten investigar, revelar y aportar a las transformaciones que junto con sindicatos y otras organizaciones consideramos necesarias. 
+En estas clases compartiremos los aprendizajes provenientes de diversas fuentes, como la academia, literatura y procesos de autoaprendizaje. Como equipo de la Fundación SOL utilizamos diversas tecnologías de información, comunicaciones y cálculo que nos permiten investigar, revelar y aportar a las transformaciones que junto con sindicatos y otras organizaciones consideramos necesarias.
 
 ## ¿Qué es `R` y RStudio?
 
-Básicamente `R` es el motor que permite que funcione lo que queremos hacer. En otras palabras, es el lenguaje de programación sobre el cual realizaremos nuestras tareas. **RStudio** en cambio es una interfaz, *un programa* podríamos decir, diseñado por una compañia (Posit) que permite su uso gratuito. Este programa sirve como un editor, visualizador y compilador del lenguaje R. 
+Básicamente `R` es el motor que permite que funcione lo que queremos hacer. En otras palabras, es el lenguaje de programación sobre el cual realizaremos nuestras tareas. **RStudio** en cambio es una interfaz, *un programa* podríamos decir, diseñado por una compañia (Posit) que permite su uso gratuito. Este programa sirve como un editor, visualizador y compilador del lenguaje R.
 
 # ¿Se entiende? {background-image="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTlkM3FkcnVkbWZ2c3phMmk5OHl2bjBoajJ0aHN6cWwxMGRpZ3hjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cRq8TJsIKmQRG/giphy.gif" background-size="contain"}
 
@@ -47,25 +47,20 @@ Básicamente `R` es el motor que permite que funcione lo que queremos hacer. En 
 
 El lenguaje R, creado en la década de 1990 por **R**oss Ihaka y **R**obert Gentleman, emerge en un contexto de expansión del dinero disponible en los hogares, aceleración del consumo y la llamada revolución informática. R fue diseñado como una herramienta para el análisis estadístico y la visualización de datos, promoviendo una democratización del conocimiento técnico. Sin embargo, este objetivo se ha concentrado en el uso académico.
 
-
 ## ¿Qué es `Quarto`?
 
-Quarto es un sistema de código abierto de publicaciones técnicas y científicas. 
-Esta herramienta permite publicar tus reportes, presentaciones , blogs o sitios web, de forma gratuita en la red, con ciertas limitaciones según tus propias habilidades en el uso de lenguajes de programación. 
+Quarto es un sistema de código abierto de publicaciones técnicas y científicas. Esta herramienta permite publicar tus reportes, presentaciones , blogs o sitios web, de forma gratuita en la red, con ciertas limitaciones según tus propias habilidades en el uso de lenguajes de programación.
 
-
-## Para conocer más detalles y profundizar sobre `Quarto` 
+## Para conocer más detalles y profundizar sobre `Quarto`
 
 No olvides acceder a más información en: [Quarto](https://quarto.org) y [Quarto Pub](https://quartopub.com/)
- 
- 
+
 ## ¿Trabajaremos con código en las clases? {background-image="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWwzNjU0b3Z4ZHhnajZxcGY5Z2l2NGhvZTBjaG4wM3RibTVwZDNoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/raznzN3IAUzW0jI2We/giphy.gif" background-size="contain"}
 
 ## Recuerda: Materiales de apoyo
 
-- Documentación de cada paquete o del trabajo que estás revisando
-- Material de clases y la **Guía del curso** `PrimerosPasosEnR`  [disponible acá](https://escuelasol.quarto.pub/escueladedatosfsol/)
-
+-   Documentación de cada paquete o del trabajo que estás revisando
+-   Material de clases y la **Guía del curso** `PrimerosPasosEnR` [disponible acá](https://escuelasol.quarto.pub/escueladedatosfsol/)
 
 ## ¿Cómo se organizarán las clases?
 
@@ -75,33 +70,29 @@ Cada semana,el día lunes a las 18:30 habrá clases sincrónicas sobre el tema c
 
 Los días sábado a las 10 am, se realizarán las clases prácticas, sobre los mismos contenidos vistos el lunes, pero con trabajo en programación y ejemplos reales.
 
-
-
-
-## Certificación 
+## Certificación
 
 ::: {.fragment .highlight-red}
 IMPORTANTE: Se emitirán sólo dos tipos de certificado
-::: 
+:::
 
-a) Participación: Para acceder debe asistir al menos al 70% de las clases sincrónicas. 
+a)  Participación: Para acceder debe asistir al menos al 70% de las clases sincrónicas.
 
-b) Participación y aprobación: Para acceder debe asistir al 70% de las clases sincrónicas y realizar el trabajo final que se informará en la clase del 7 de junio de 2025 . 
+b)  Participación y aprobación: Para acceder debe asistir al 70% de las clases sincrónicas y realizar el trabajo final que se informará en la clase del 7 de junio de 2025 .
 
-* La asistencia se registrará al final de cada clase mediante un formulario que también servirá para evaluar la misma. Quienes no puedan asistir, deben dar aviso oportuno (antes de la clase) para registrarlo. 
+-   La asistencia se registrará al final de cada clase mediante un formulario que también servirá para evaluar la misma. Quienes no puedan asistir, deben dar aviso oportuno (antes de la clase) para registrarlo.
 
 ## Videos de las clases
 
-Les enviaremos un enlace con contraseña para que descarguen los videos de clase. 
+Les enviaremos un enlace con contraseña para que descarguen los videos de clase.
 
 ::: {.fragment .highlight-red}
 El material de estos vídeos es para fines estrictamente relacionados con el curso. No recomendamos que sea compartido a quienes no asistieron a la clase, pues implica falta de contexto. Tampoco autorizamos su difusión en plataformas distintas a las que hemos dispuesto para ello.
-::: 
+:::
 
-Como institución realizamos clases abiertas y publicamos otro tipo de contenidos que se relacionan con estas temáticas y están pensados para libre difusión. 
+Como institución realizamos clases abiertas y publicamos otro tipo de contenidos que se relacionan con estas temáticas y están pensados para libre difusión.
 
 # Clase 1
-
 
 ## ¿Qué son los datos?
 
@@ -109,40 +100,38 @@ Los datos son unidades de información que registran aspectos de la realidad. Pu
 
 Por ejemplo:
 
-- En salud: edades, pesos, diagnósticos.
-- En educación: asistencia, notas, pruebas de medición.
-- En administración: costos, ingresos, tiempos de entrega.
-- En ciencias sociales: encuestas, entrevistas, observaciones.
-
+-   En salud: edades, pesos, diagnósticos.
+-   En educación: asistencia, notas, pruebas de medición.
+-   En administración: costos, ingresos, tiempos de entrega.
+-   En ciencias sociales: encuestas, entrevistas, observaciones.
 
 ## Datos cuantitativos
 
 Miden cantidades, se expresan en números, por ello pueden sumarse, promediarse, etc.
 
-- Edad de las personas
-- Ingreso mensual
-- Temperatura ambiental
-- Puntaje en una prueba
-- Nivel de glucosa en sangre
-- Distancia recorrida
+-   Edad de las personas
+-   Ingreso mensual
+-   Temperatura ambiental
+-   Puntaje en una prueba
+-   Nivel de glucosa en sangre
+-   Distancia recorrida
 
 ## Datos Cualitativos
 
 Describen cualidades, categorías o características. No tienen valor numérico directo.
 
-- Género (femenino, masculino, no binario...)
-- Profesión (profesora, enfermero, técnico...)
-- Estado civil (soltero, casado, viudo...)
-- Nivel educativo (básico, medio, superior)
-- Región o país de origen
-- Opiniones (satisfecho, indiferente, insatisfecho)
+-   Género (femenino, masculino, no binario...)
+-   Profesión (profesora, enfermero, técnico...)
+-   Estado civil (soltero, casado, viudo...)
+-   Nivel educativo (básico, medio, superior)
+-   Región o país de origen
+-   Opiniones (satisfecho, indiferente, insatisfecho)
 
 ## Análisis de datos
 
 El análisis de datos es el proceso de examinar, limpiar, transformar e interpretar información con el objetivo de responder preguntas, descubrir patrones o tomar decisiones.
 
 Es una forma estructurada de mirar los datos para entender qué nos están diciendo.
-
 
 ## Procesamiento de datos
 
@@ -152,33 +141,31 @@ Una secuencia de pasos lógicos para analizarlos, ordenarlos, filtrarlos o calcu
 
 ## Algoritmo
 
-::: {.columns}
-::: {.column}
-```
+::::: columns
+::: column
+```         
 resultado = función (entrada)
 ```
 
 ![](img/algortimo.png){width="100%"}
 :::
 
-::: {.column}
+::: column
 Un algoritmo es una serie de instrucciones paso a paso para resolver un problema o realizar una tarea.
 :::
-:::
-
+:::::
 
 ## Función
 
-::: {.columns}
-::: {.column}
-
+::::: columns
+::: column
 ![](img/funcion.png){width="100%"}
 :::
 
-::: {.column}
+::: column
 Una función es una forma concreta de escribir y reutilizar ese algoritmo dentro de un programa.
 :::
-:::
+:::::
 
 ## Ejemplo de algoritmo y función
 
@@ -232,7 +219,7 @@ class(a) # numeric
 
 ```
 
-La función `class()` permite conocer la clase, o el **tipo** al que pertenece el dato. 
+La función `class()` permite conocer la clase, o el **tipo** al que pertenece el dato.
 
 ## Tipos de datos
 
@@ -245,9 +232,8 @@ class(b) # integer
 
 ```
 
-
 ## Tipos de datos
- 
+
 ```{r}
 #| echo: true
 # Lógico
@@ -269,7 +255,6 @@ class(d) # character
 
 ```
 
-
 ## Tipos de datos
 
 ```{r}
@@ -283,7 +268,6 @@ levels(colores) # rojo, verde, azul
 
 ## Valores especiales
 
-
 ```{r}
 #| echo: true
 
@@ -296,7 +280,7 @@ NaN
 Inf
 ```
 
-## Valores especiales 
+## Valores especiales
 
 ```{r}
 #| eval: false
@@ -307,7 +291,7 @@ is.na(x) # TRUE en la tercera posición
 
 ```
 
-## Valores especiales 
+## Valores especiales
 
 ```{r}
 #| eval: false
@@ -331,7 +315,6 @@ length(x) # 0
 is.null(x) # TRUE
 ```
 
-
 ## Valores especiales
 
 ```{r}
@@ -345,20 +328,20 @@ is.infinite(x) #  TRUE
 
 ## Estructura de datos
 
-Abordamos distintos tipos de datos individuales como números, textos o valores lógicos, etc, pero en la práctica, rara vez analizamos un solo dato. 
+Abordamos distintos tipos de datos individuales como números, textos o valores lógicos, etc, pero en la práctica, rara vez analizamos un solo dato.
 
-Lo más común es trabajar con conjuntos de datos como: 
+Lo más común es trabajar con conjuntos de datos como:
 
-- Registros de asistencia
-- Encuestas
+-   Registros de asistencia
+-   Encuestas
 
 Para eso, existen formas organizadas de agrupar múltiples datos.
 
 ## Estructuras de datos
 
-- Vectores
-- Lista
-- Data.frame
+-   Vectores
+-   Lista
+-   Data.frame
 
 ## Estructura de datos
 
@@ -376,8 +359,8 @@ class(palabras) # character
 
 ## Estructura de datos
 
-:::{.columns}
-:::{.column}
+::::: columns
+::: column
 ```{r}
 #| echo: true
 # Vectores
@@ -388,10 +371,11 @@ palabras <- c("rojo",
 
 ```
 :::
-:::{.column}
+
+::: column
 ![Figura de ejemplo](img/df_ejem.png){width="100%"}
 :::
-:::
+:::::
 
 ## Estructura de datos
 
@@ -423,8 +407,8 @@ mi_df$edad         # Accede a la columna "edad"
 
 ## Estructura de datos
 
-:::{.columns}
-:::{.column}
+::::: columns
+::: column
 ```{r}
 #Para acceder a la columna "edad"
 
@@ -434,17 +418,17 @@ mi_df[,2]  # [fila,columna]
 
 ```
 :::
-:::{.column}
+
+::: column
 ![Figura de ejemplo](img/midf.png)
 :::
-:::
-
+:::::
 
 ## Estructura de datos
 
-:::{.columns}
-:::{.column}
-¿Qué resultado dará mi_df[2,3]?
+::::: columns
+::: column
+¿Qué resultado dará mi_df\[2,3\]?
 
 ```{r}
 #Para acceder a la columna "edad"
@@ -455,10 +439,11 @@ mi_df[,2]  #[fila,columna]
 
 ```
 :::
-:::{.column}
+
+::: column
 ![](img/df2.png)
 :::
-:::
+:::::
 
 ## Procesamiento de datos
 
@@ -466,15 +451,13 @@ Conocimos las estructuras que usamos para organizar conjuntos de datos: vectores
 
 Ahora que sabemos cómo se almacenan los datos, es momento de aprender qué podemos hacer con ellos. Tener los datos es solo el primer paso: lo importante es cómo los procesamos para extraer información útil.
 
-
 ## Operaciones matemáticas básicas
 
-- **+**              Suma
-- **-**              Resta
-- **\***             Multiplicación
-- **/**              División
-- **^**              Potencia
-
+-   **+** Suma
+-   **-** Resta
+-   **\*** Multiplicación
+-   **/** División
+-   **\^** Potencia
 
 ## Operaciones matemáticas básicas
 
@@ -503,6 +486,7 @@ a - b
 ```
 
 ## Operaciones matemáticas básicas
+
 ```{r}
 # multiplicación
 
@@ -512,7 +496,6 @@ b <- c(3, 5, 1)
 a * b
 
 ```
-
 
 ## Operaciones matemáticas básicas
 
@@ -528,27 +511,38 @@ base ^ exponente
 
 ## Operaciones estadísticas básicas
 
-- mean()        # promedio
-- median()      # mediana
-- max()         # valor máximo
-- min()         # valor mínimo
-- sum()         # suma total
-- sd()          # desviación estándar
-- length()      # cantidad de elementos
-
+-   mean() \# promedio
+-   median() \# mediana
+-   max() \# valor máximo
+-   min() \# valor mínimo
+-   sum() \# suma total
+-   sd() \# desviación estándar
+-   length() \# cantidad de elementos
 
 ## Operaciones lógicas y de comparación
 
-- ==            # igual
-- !=            # distinto
-- >             # mayor que
-- <             # menor que
-- &             # y lógico
-- |             # o lógico
-- !             # negación
+-   == \# igual
+
+-   != \# distinto
+
+-   
+
+    > ```         
+    >         # mayor que
+    > ```
+
+-   \< \# menor que
+
+-   & \# y lógico
+
+-   
+
+    |             # o lógico
+
+-   ! \# negación
 
 ## R y RStudio
 
-`R` es un lenguaje de programación, como lo son también `Python`,  `Java` o `SQL`. R está diseñado para trabajar con datos: analizarlos, graficarlos y modelarlos.
+`R` es un lenguaje de programación, como lo son también `Python`, `Java` o `SQL`. R está diseñado para trabajar con datos: analizarlos, graficarlos y modelarlos.
 
 RStudio es un entorno o interfaz amigable para programar en R. Nos permite escribir código, ver los resultados, los gráficos y organizar nuestro trabajo todo en un mismo lugar.

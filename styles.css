@@ -1,0 +1,68 @@
+/* Fondo global de toda la presentación */
+.reveal,
+body,
+html {
+	background-color: #2e2e3a !important;
+	color: #d0d0d0 !important;
+}
+
+/* Títulos */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	color: #ffffff !important;
+}
+
+/* Enlaces */
+.reveal a {
+	color: #ff6600 !important;
+	text-decoration: underline;
+}
+
+/* Contenedores de código */
+.reveal pre,
+.reveal pre code,
+pre,
+code {
+	background-color: #1e1e2f !important;
+	color: #d0d0d0 !important;
+	border-radius: 8px;
+	padding: 1.5em !important;
+	font-size: 2.5em !important;
+	/* aquí subimos el tamaño del código */
+	width: 90% !important;
+	margin: auto !important;
+	overflow-x: auto;
+}
+
+/* Botones o destacados si usaras */
+.reveal .btn,
+.reveal button {
+	background-color: #ff6600 !important;
+	color: #ffffff !important;
+	border: none;
+	padding: 0.6em 1.2em;
+	border-radius: 6px;
+	font-size: 1.1em;
+}
+
+/* Márgenes generales en slides */
+.reveal .slide-background-content {
+	padding: 2em;
+}
+
+.sourceCode {
+	font-size: 1.5em !important;
+}
+
+.reveal pre code {
+	font-size: 1.5em;
+	line-height: 1.3;
+}
+
+code {
+	font-size: 1.2em;
+}
