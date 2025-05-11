@@ -19,10 +19,9 @@ Puedes revisar todo el detalle de las clases y la escuela en este [enlace](https
 
 ---
 
-## 🗂️ Estructura de carpetas
+## 🗂️ Realiza tu entremiento semanal
 
-```bash
-clases/
-├── Clase 1 - Tipos de datos y herramientas de programación/
-```
+Desde el 10 de mayo al 5 de julio del 2025, se actualizarán las preguntas considerando los contenidos de clases. 
+
+[Accede aquí](https://escuelasol.github.io/entrenamiento_escuela_de_datos/)
 
