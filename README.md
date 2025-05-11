@@ -17,6 +17,8 @@
 
 Puedes revisar todo el detalle de las clases y la escuela en este [enlace](https://aulavirtual.escuelasol.cl/escuela-de-datos#scrollTop=0)
 
+Si participas del curso puedes acceder a las grabaciones de clase con tu contraseña en este [enlace](https://cloud.escuelasol.cl/index.php/s/qLKJHDbNQKfWMXY)
+
 ---
 
 ## 🗂️ Realiza tu entremiento semanal
