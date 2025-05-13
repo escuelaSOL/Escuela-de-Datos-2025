@@ -1,0 +1,266 @@
+---
+title: "Clase 2: Trabajo con datos"
+subtitle: "Conceptos clave de programación para análisis de datos o automatización de procesos"
+author: "Fundación SOL"
+date: 05/12/2025
+date-format: "dddd, D MMM , YYYY"
+lang: es
+format:
+  revealjs:
+    theme: night
+    incremental: true
+    logo: img/logoblanco.png
+project:
+  type: website
+  output-dir: docs
+---
+
+## Antecedentes de la programación
+
+- Una parte relevante de la historia de la programación moderna ha sido su aplicación para el desarrollo tecnológico en la industria, la administración del Estado y la guerra, e incluso el arte.  
+- Un buen ejemplo es uno de los antecedentes directos de los ordenadores modernos, el *Telar de Jacquard* que utilizaba códigos en tarjetas perforadas para definir diseños o el *Motor Analítico* de Babbage.   
+
+---
+
+::: {#fig-telar-jaq}
+[![](img/Telar-de-Jacquard.jpg){width="80%"}](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom)
+
+Telar de Jacquard (1801) - Nota de prensa [(Science and Industry Museum - Manchester)](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom).
+:::
+
+---
+
+::: {#fig-telar-jaq-2}
+[![](img/telar2.png){width="48%"}](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom)
+
+Muestras de tejidos Telar de Jacquard (1801) - Nota de prensa [(Science and Industry Museum - Manchester)](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom).
+:::
+
+---
+
+::: {#fig-telar-jaq-3}
+[![](img/telar3.png){width="30%"}](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom)
+
+Muestras de tarjetas Telar de Jacquard (1801) - Nota de prensa [(Science and Industry Museum - Manchester)](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom).
+:::
+
+---
+
+::: {#fig-telar-jaq-4}
+[![](img/telar4.png){width="70%"}](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom)
+
+Muestras de tejidos Telar de Jacquard (1801) - Nota de prensa [(Science and Industry Museum - Manchester)](https://www.scienceandindustrymuseum.org.uk/objects-and-stories/jacquard-loom).
+:::
+
+---
+
+::: {#fig-aengine}
+![](img/analytical-engine.png){width="70%"}
+
+Charles Babbage - Analytical Engine (1837).
+:::
+
+---
+
+::: {#fig-hollerith}
+[![](img/censo1890.png){width="70%"}](https://www.columbia.edu/cu/computinghistory/census-tabulator.html)
+
+Máquina tabuladora Censo (1890) - Hollerith [(Columbia Edu)](https://www.columbia.edu/cu/computinghistory/census-tabulator.html).
+:::
+
+## Hollerith y el Censo de 1890
+
+- La máquina de Hollerith permitió a la oficina de estadísticas de Estados Unidos finalizar el censo en 6 meses y 2 años de análisis de datos. En referencia al censo de 1880 fue un exito considerando que este demoró 8 años. 
+- El uso de tarjetas perforadas se mantuvo en el desarrollo de la computación, programación y análisis de datos, con aplicaciones concretas. Una de las empresas asociadas al uso de esta máquina fue la multinacional IBM.
+
+---
+
+::: {#fig-punchedc}
+![](img/punchedcard.png){width="70%"}
+
+Tarjetas perforadas - IBM (siglo XX).
+:::
+
+## La programación y sus aplicaciones 
+
+- Estos ejemplos muestran como la programación ha estado relacionada desde sus origenes con la automatización de procesos (sobre todo en el ámbito industrial) y el análisis de datos sociodemográficos para la administración del Estado. 
+- Otro caso relevante, es el uso militar de la tecnología de programación y computación, donde la Máquina de Turing (1936). Acá el desafío es no solo el cálculo sino también el manejo de valores lógicos, más cercano a la computación actual.  
+
+## Programación y algortimos
+
+- El primer algoritmo escrito directamente para una computación automatizada es el algoritmo publicado por **Ada Lovelace** en 1843 para el cálculo de números de Bernoulli. 
+- Charles Babbage fue invitado a explicar el funcionamiento de la *Analytical Engine* y un matemático, Luigi Menabrea, escribió una nota al respecto en francés. Se pidió a Ada la traducción y que añadiera notas. Estas eran 3 veces más largas que el artículo original. 
+
+## Programación y algortimos
+
+- En la Nota G, Lovelace describe como puede hacerse uso de esta máquina, mediante su operación binaria, para realizar cómputos avanzados. 
+- La ecuación propuesta era recursiva, pues utilizaba la información de una operación para realizar la siguiente. 
+- Según la autora, al hacer un uso binario de las tarjetas perforadas, se abrían posibilidades como el componer y elaborar *piezas científicas de música* de cualquier grado de complejidad.    
+
+---
+
+::: {#fig-punchedc}
+![](img/ada.jpg){width="70%"}
+
+Ada Lovelave - 1834
+:::
+
+## ¿Cómo utilizar funciones y algoritmos?
+
+- Recordemos que un *algoritmo* es una serie de instrucciones paso a paso para resolver un problema o realizar una tarea.
+- Una *función* es una forma concreta de escribir y reutilizar ese algoritmo dentro de un programa.
+- ¿Cómo podemos recurrir al uso de funciones y algoritmos para nuestro trabajo cotidiano?
+- ¿Qué procesos nos pueden ayudar a automatizar?  
+- ¿Que son los loops o iteraciones de código?
+
+## Funciones en R
+
+- En este caso entenderemos una función como un código para ser usado con una variedad de imputs y evita que debamos escribir el mismo código una y otra vez.
+- Recordemos que R es un lenguaje de programación entre otros lenguajes existentes como Python, C, etc. 
+- Cada lenguaje de programación tiene reglas y formas de programación que definen estilos y formas particulares.
+
+## Estructura de una función básica
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+nombre<-function(variables){
+cuerpo
+}
+
+```
+
+## Ejemplo con dataset df_personas
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+df_personas <- data.frame(
+  ID = 1:10,
+  Nombre = c("Ana","Luis","Eva","Diego","Juan","Marcela","Diego","Jocelyn","Raquel","Alejandra"),
+  Edad = c(28,34,39,45,14,65,52,27,62,28),
+  Ocupación = c(TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE),
+  Ingreso = c(510636,600000,80000,420000,224004,70000,530000,50000,224004,380000),
+  Gasto = c(700000,900000,120000,920000,200000,300000,1130000,600000,700000,880000)
+)
+```
+
+## Función ejemplo para estadísticas de resumen
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+#Escribimos la función
+resumen <- function(vector){
+    maximo <-max(vector)
+    media <-mean(vector)
+    mediana <- median(vector)
+    minimo <- min(vector)
+    return(c(maximo,media,mediana,minimo))
+}
+```
+
+## Función aplicamos función a vectores edad, ingreso y gasto
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+#Aplicamos sobre el vector 
+edad<-as.vector(df_personas$Edad)
+print(resumen(edad))
+ingreso<-as.vector(df_personas$Ingreso)
+print(resumen(ingreso))
+gasto<-as.vector(df_personas$Gasto)
+print(resumen(gasto))
+
+```
+
+## Función intervalo de confianza
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+mean_ci <- function(x, conf = 0.95) {
+  se <- sd(x) / sqrt(length(x))
+  alpha <- 1 - conf
+  mean(x) + se * qnorm(c(alpha / 2, 1 - alpha / 2))
+}
+```
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+mean_ci(edad)
+mean_ci(ingreso)
+mean_ci(gasto)
+```
+
+## Funciones anidadas
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+resumen <- function(vector){
+  mean_ci <- function(x, conf = 0.95) {
+  se <- sd(x) / sqrt(length(x))
+  alpha <- 1 - conf
+  mean(x) + se * qnorm(c(alpha / 2, 1 - alpha / 2))
+  }
+    interval <-mean_ci(vector)
+    maximo <-max(vector)
+    media <-mean(vector)
+    mediana <- median(vector)
+    minimo <- min(vector)
+    return(c(maximo,media,mediana,minimo,interval))
+}
+```
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+print(resumen(edad))
+print(resumen(ingreso))
+print(resumen(gasto))
+```
+## Aplicar una función a una lista de vectores
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+lista<-list(a=edad,b=ingreso,c=gasto)
+lapply(lista,resumen)
+```
+
+## ¿Qué es un loop?
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+for (i in 1:5) {
+  print(i)
+}
+```
+
+## Siguiendo el ejemplo anterior, en lugar de lapply con un loop
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+for (element in lista) {
+  print(resumen(element))
+}
+```
+
+## Aplicar función según condición 
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+ocupa <- ifelse(df_personas$Ocupación == TRUE, "Ocupado/a", "No ocupado/a")
+ocupa2 <-as.vector(df_personas$Ocupación)
+ocupa2
+```
+
