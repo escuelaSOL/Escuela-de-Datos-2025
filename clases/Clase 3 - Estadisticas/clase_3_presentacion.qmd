@@ -1,0 +1,393 @@
+---
+title: "Clase 3: Herramientas de estadística"
+subtitle: "Introducción a la estadística para análisis de datos"
+author: "Fundación SOL"
+date: 05/18/2025
+date-format: "dddd, D MMM , YYYY"
+lang: es
+format:
+  revealjs:
+    theme: night
+    incremental: true
+    logo: img/logoblanco.png
+project:
+  type: website
+  output-dir: docs
+---
+## Introducción a la estadística
+
+¿Qué es y para qué sirve?
+
+-   Estudio científico que tiene por objeto la recopilación, clasificación y análisis de los datos numéricos concernientes a determinados fenómenos, así como la obtención de conclusiones a partir de ellos, frec. (RAE)
+-   Es una forma de conocer el mundo, mediante el uso de datos. Para ello se recurre a un conjunto de "herramientas" que nos serán de utilidad para "encontrar sentido" a información que a simple vista puede resultar difícil de comprender (Glenberg, 2007).
+
+## Introducción a la estadística
+
+¿Qué es y para qué sirve?
+
+-   Es también una rama de las matemáticas y puede dividirse en dos grandes grupos:
+
+    -   la estadística descriptiva y,
+
+    -   la estadística inferencial (que a su vez puede dividirse en probabilística y no probabilística).
+
+-   Esta clase nos enfocaremos en la estadística descriptiva, dimensión con la cual nos encontamos más familiarizados y que permite avanzar hacia procedimientos estadísticos de mayor complejidad.
+
+
+## Introducción a la estadística
+
+¿Qué es y para qué sirve?
+
+-   Para los objetivos de este curso resulta especialmente relevante la posibilidad de aplicar procedimientos estadísticos para el análisis de datos socioeconómicos. Popularmente, la estadística se identifica con procedimientos de conteo y probabilidad (por ejemplo, al lanzar un dado). Sin embargo, al aplicar elementos de estadística a problemas de ciencias sociales (incluyendo la economía), generalmente encontramos dificultades relevantes para hacer uso de la estadística.
+
+
+## Introducción a la estadística
+
+¿Qué es y para qué sirve?
+
+-   Si ignoramos la especificidad de los datos económicos o sociales corremos el riesgo de tratar los números como si se tratara de mediciones directas (ahistóricas y sin determinantes geográficas o de poder) susceptibles de ser manipuladas y transformadas matemáticamente como si fueran un dato duro (Winkler, 2009).
+
+- Es relevante no descuidar la metodología detrás de los datos. 
+
+## Introducción a la estadística
+
+-   ¿Cómo nos relacionamos con la estadística en nuestra vida cotidiana?
+
+---
+
+::: {#fig-notaprensa}
+[![](img/promedioing.png){width="60%"}](https://www.latercera.com/pulso-pm/noticia/ingreso-promedio-laboral-llego-a-826-mil-en-2023-pero-en-los-que-trabajaron-jornada-completa-es-de-casi-un-millon-de-pesos/WQCWU42X5NDHTEBL3NAKGKRK64/)
+
+Nota de prensa [(La Tercera)](https://www.latercera.com/pulso-pm/noticia/ingreso-promedio-laboral-llego-a-826-mil-en-2023-pero-en-los-que-trabajaron-jornada-completa-es-de-casi-un-millon-de-pesos/WQCWU42X5NDHTEBL3NAKGKRK64/).
+:::
+
+---
+
+::: {#fig-parra}
+[![](img/parra.jpg){width="100%"}](https://web.facebook.com/fundacionsolchile/photos/a.150620621692677/1588464151241643/?_rdc=1&_rdr)
+:::
+
+---
+
+::: {#fig-prob_mort}
+[![](img/prob_mort.png){width="80%"}](https://www.biobiochile.cl/noticias/economia/tu-bolsillo/2024/08/04/vivir-hasta-los-110-anos-lo-que-establecen-realmente-las-tablas-de-mortalidad-para-las-jubilaciones.shtml)
+
+Nota de prensa [(Biobío Radio)](https://www.biobiochile.cl/noticias/economia/tu-bolsillo/2024/08/04/vivir-hasta-los-110-anos-lo-que-establecen-realmente-las-tablas-de-mortalidad-para-las-jubilaciones.shtml).
+:::
+
+---
+
+## Tablas de mortalidad
+
+- Según las tablas de mortalidad definidas en 2020, una mujer de 60 años cuenta con una probabilidad de 0,22% de alcanzar los 110 años y tiene una expectativa de vida en 90,8 años. Para el caso de un hombre de 65 años, la probabilidad de que alcance los 110 años es 0,020%. Con esto, su expectativa de vida es de 86,6 años. 
+
+- Fuente: *Superintendencia de Pensiones*
+
+## Tabla Mortalidad 2020 Renta Vitalicia Mujeres
+
+::: {#fig-rvmuj2020}
+[![](img/rv_muj2020.png){width="26%"}](https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43609.html)
+
+[(CMF Chile)](https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43609.html).
+:::
+
+## Tabla de mortalidad 2020 Renta Vitalicia Mujeres
+
+::: {#fig-tabmor}
+[![](img/tabmor.png){width="70%"}](https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43609.html)
+
+[(CMF Chile)](https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43609.html).
+:::
+
+---
+
+::: {#fig-ife}
+[![](img/ife.png){width="80%"}](https://www.emol.com/noticias/Economia/2021/05/27/1022152/IFE.html)
+
+Fuente: Nota de prensa [(Emol)](https://www.emol.com/noticias/Economia/2021/05/27/1022152/IFE.html).
+:::
+
+---
+## Fuentes de datos más frecuentes
+
+- **Registros administrativos:** Se trata de información almacenada con un objetivo específico (de carácter administrativo), que serán de utilidad para el análisis de datos aunque no se han recogido con este fin. 
+
+- Ejemplo: Registro Social de Hogares (RSH)
+
+## Fuentes de datos más frecuentes
+
+- **Encuestas:** Datos obtenidos mediante algún tipo de levantamiento basado en el uso de un cuestionario y la definición de una muestra, con una población e instrumentos definidos en función del objetivo del estudio.  
+
+- Ejemplo: Encuesta CASEN 
+
+## Fuentes de datos más frecuentes
+
+- **Metadatos:** Datos de contexto que proveen información sobre otros datos. Generalmente se obtienen a partir del funcionamiento de algún sistema de información. 
+
+- Ejemplo: Facebook Ads (implementado desde 2007) / Cambridge Analytica y multa de US$1.300 millones por parte de la UE. 
+
+## Aprendamos sobre estadísticas descriptivas básicas
+
+-   Medidas de tendencia central
+    -   El promedio
+    -   La moda
+    -   La mediana
+-   La desviación estándar
+-   La distribución normal (histogramas)
+-   Deciles 
+-   Entre otras. 
+
+## Aprendamos sobre estadísticas descriptivas básicas
+
+Vamos al código en R
+
+## Aprendamos sobre estadísticas descriptivas básicas
+
+Como hemos mencionado en clases, R dispone de múltiples *data frames* pre-cargadas. Estas "bases de datos" permiten realizar ejercicios para probar algunas funcionalidades de R. En este caso, recurriremos a la tabla [*air quality*](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html). 
+
+## Revisamos las bases
+La función data() nos informa respecto a las bases de datos disponibles. 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+data() 
+```
+
+Guardamos la tabla *air quality* como data frame, con el nombre aire. 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+aire<-as.data.frame(airquality)
+```
+
+## Nombre de columnas 
+
+Código visto en clase práctica (repaso). 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+for (pos in seq_along(colnames(aire))) {
+  nombre_columna <-  colnames(aire)[pos]
+  cat("Nombre columna:", 
+      nombre_columna, "/ Posición: ", 
+      pos, "\n")
+}
+```
+
+## Usamos nuestra función de ejemplo "resumen"
+
+Agregamos la función `na.rm` y modificamos `return` para obtener una lista y agregamos la desviación estándar y los cuantiles. Nuestra función consiste de algunas **estadísticas descriptivas**. 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+#Escribimos la función
+resumen <- function(vector){
+    maximo <-max(vector,na.rm = TRUE)
+    media <-mean(vector,na.rm = TRUE)
+    mediana <- median(vector,na.rm = TRUE)
+    minimo <- min(vector,na.rm = TRUE)
+    desv <- sd(vector, na.rm=TRUE)
+    quant<-quantile(vector,na.rm=TRUE)
+    return(list(max=maximo,media=media,mediana=mediana,min=minimo,desv=desv,cuantil=quant))
+}
+```
+
+## Aplicamos nuestra función
+
+Antes, transformamos de Farenheit a Celcius, con una fórmula: 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+aire$Temp<-(aire$Temp-32) / 1.8
+```
+
+Recurrimos a `lapply` para aplicar la función `resumen` a las columnas de nuestra base `aire`.
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+lapply(aire[1:4],resumen)
+```
+## Algunas definiciones: medidas de tendencia central 
+
+- *Media:* Se calcula mediante la suma de un conjunto de valores dividida entre el número total de sumandos.
+- *Mediana:* Corresponde al valor central de la distribución al ordenar los datos de mayor a menor.
+- *Moda:* Corresponde al valor que más se repite. 
+
+## Algunas definiciones: medidas de dispersión
+- *Varianza:* Corresponde a una medida de dispersión de los datos en relación a la media. En su fórmula se eleva al cuadrado no está en la misma unidad de medida que los datos.
+- *Desviación estándar:* Corresponde a una medida de desviación alternativa a la varianza, medida en la misma unidad que los datos.
+
+## Veamos expresiones gráficas básicas
+
+- Recursos gráficos como los histogramas o los diagramas de caja son útiles para sintetizar información que nos entregan las estadísticas descriptivas. 
+
+## Histograma
+
+- *Histograma:* Los histogramas permiten mostrar la distribución de un conjunto de datos en diferentes segmentos o rangos. La altura de cada barra representa el recuento de valores de cada rango.
+
+- Se puede obtener recurriendo a r-base con el comando `hist`
+
+## Diagrama de caja
+
+- *Diagrama de Caja (Box-Plot):* Método para representar gráficamente estadísticas descriptivas relevantes como la mediana, los límites inferior y superior, los casos aberrantes y los cuartiles. 
+
+- Se puede obtener recurriendo a r-base con el comando `boxplot`
+
+## Ejemplo de Histograma
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+hist(aire$Temp)
+```
+
+## Ejemplo de histograma con descriptivas
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+hist(aire$Temp)
+abline(v = mean(aire$Temp),col = "blue",lwd = 2)
+abline(v = median(aire$Temp),col = "green",lwd = 2)
+abline(v = quantile(aire$Temp,0.75, names = FALSE),col = "red",lwd = 2)
+abline(v = quantile(aire$Temp,0.25, names = FALSE),col = "red",lwd = 2)
+```
+
+## Ejemplo de histograma con descriptivas 
+
+::: {#fig-hist2}
+[![](img/hist2.png){width="80%"}]
+
+Histograma ejemplo con descriptivas.
+:::
+
+## Ejemplo de Diagrama de caja
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+boxplot(aire$Temp)
+```
+
+## Probemos con una base de datos
+
+::: {#fig-base}
+[![](img/base.png){width="60%"}](https://datosabiertos.mineduc.cl/encuesta-nacional-de-desarrollo-digital-e-innovacion-educativa/)
+
+[Encuesta Nacional de Desarrollo Digital e Innovación Educativa - ENDDEIE](https://datosabiertos.mineduc.cl/encuesta-nacional-de-desarrollo-digital-e-innovacion-educativa/).
+:::
+
+## Algunas características de la base
+
+- **Unidad de análisis:** Establecimientos
+- **Muestra:** 1.277 casos con reemplazo
+- **Marco muestral:** 5.695 establecimientos en base a MINEDUC
+- **Representatividad:** nacional urbana / rural
+- **Metodología:** Mixta (presencial y online).
+
+## Factores de expansión 
+
+- Se utilizan para que los resultados puedan ser representativos de la población a estudiar. 
+- Es relevante considerar que la mayoría de los datos provenientes de encuestas de hogares utilizan metodologías de muestreo complejo que implican el uso de estos factores. 
+
+## Ejemplo simple del uso de factores
+
+Cargamos la base de datos
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+base<-read.csv("/home/ubuk/Escritorio/ESTUDIANTES_PUBLICA_2023.csv",TRUE,sep=";")
+```
+
+Factorizamos el valor a observar
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+base$dependencia<-factor(base$COD_DEPE2,levels = c(1,2,3),
+labels = c("Municipal","Particular subvencionado","Particular pagado"))
+```
+
+Generamos la tabla
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+tabla1<-table(base$dependencia)
+```
+
+## Con factor de expansión
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+base$WGT_EST_FINAL<-as.numeric(base$WGT_EST_FINAL)
+tabla2 <- aggregate(base$WGT_EST_FINAL ~ base$dependencia, data = base, FUN = sum)
+```
+
+## Dato muestral y expandido
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+tabla1
+tabla2
+```
+
+## Cargamos la encuesta CASEN 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('haven')
+casen22 <-read_dta("/home/ubuk/Escritorio/casen2022.dta")
+casen22<-as.data.frame(casen22)
+```
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('tidyverse')
+glimpse(casen22)
+```
+
+## Resultado muestral y expandido
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+tabla3<-table(casen22$sexo)
+tabla4 <- aggregate(casen22$expr ~ casen22$sexo, data = casen22, FUN = sum)
+```
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+tabla3
+tabla4
+```
