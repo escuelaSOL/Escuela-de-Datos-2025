@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📚 Escuela de Datos 2025
 ## Clases para el Análisis de Datos con R
 ### Fundación SOL
