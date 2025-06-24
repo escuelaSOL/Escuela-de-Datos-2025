@@ -1,0 +1,252 @@
+---
+title: "Clase 6: Herramientas de extracción de datos web"
+author: "Fundación SOL"
+date: 06/08/2025
+date-format: "dddd, D MMM , YYYY"
+lang: es
+format:
+  revealjs:
+    theme: night
+    incremental: true
+    logo: img/logoblanco.png
+project:
+  type: website
+  output-dir: docs
+---
+
+## Extracción de datos web
+
+¿Qué es y para qué sirve?
+
+-   La extracción de datos web permite obtener grandes volúmenes de datos, o información estratégica, contenida en sitios web. 
+-   Esto permite la actualización automatizada de datos a partir de una fuente contenida en un sitio web.
+-   Generalmente se realiza con lenguajes de programación como Python, no obstante, R cuenta también con herramientas para estos fines. 
+
+## Extracción de datos web hoy
+
+Desafíos actuales
+
+-   Cada vez se ha hecho más desafiante el ejercicio de obtener información de sitios web mediante web scraping. 
+-   Actualmente existen barreras relevantes par la extracción automatizada de datos, como el rastreo de la IP de la computadora que hace el requerimiento y los identificadores de actividad humana, entre otras medidas de seguridad. 
+-   Esto obliga al uso de proxys y otros mecanismos. Cada vez es menos *automatizable*.
+
+## Extracción de datos web
+
+Aspectos básicos: HTML
+
+-   Las páginas web generalmente están escritas en **HTML**, un lenguaje desarrollado en 1989 que permite a los navegadores web "interpretar" y "proyectar" una imagen del sitio.
+-   **HTML** es un lenguaje basado en etiquetas, con una apertura `<element>` y un cierre `</element>`. 
+-   Los `<div>` `</div>` permiten agrupar elementos distintos en un mismo contenedor. 
+
+---
+
+::: {#fig-sitioweb}
+[![](img/sitioweb.png){width="100%"}](http://info.cern.ch/hypertext/WWW/TheProject.html)
+
+[World Wide Web 1991 - TheProject.html](http://info.cern.ch/hypertext/WWW/TheProject.html).
+:::
+
+---
+
+::: {#fig-TIM}
+![](img/tim_berners_lee.jpeg){width="90%"}
+
+Tim Berners-Lee.
+:::
+
+---
+
+::: {#fig-Fwebserver}
+[![](img/First_Web_Server.jpg){width="90%"}]
+
+Primer servidor de internet en CERN.
+:::
+
+
+## Veamos un ejemplo simple con nuestro sitio web 
+
+-   Ingresaremos al sitio de la escuela y extraeremos una tabla para comprender de qué se trata en base a un ejemplo simple. 
+-   Generalmente los procesos de extracción de datos requerirán varias pruebas y procesos posteriores de *limpieza* de los datos que hemos logrado extraer. 
+-   En la mayoría de los casos el formato de origen no ha sido pensado para realizar procesos de análisis de datos, por lo que tendremos que trabajar con lo que logremos extraer.  
+
+---
+
+::: {#fig-escueladatos}
+[![](img/esc-datos.png){width="72%"}](https://aulavirtual.escuelasol.cl/escuela-de-datos#)
+
+[(Escuela SOL)](https://escuelasol.cl/).
+:::
+
+## Activar herramientas desarrollador 
+
+-   Un primer paso es activar en nuestro navegador el *modo desarrollador* que nos permitirá observar la estructura del sitio web. Generalmente esto se puede seleccionar en el menú del navegador. 
+-   De todas formas también es posible explorar los elementos del sitio web desde la consola. 
+
+## Herramientas desarrollo
+
+::: {#fig-desarrollador}
+[![](img/desarrolla.png){width="80%"}](https://aulavirtual.escuelasol.cl/escuela-de-datos#scrollTop=0)
+
+Escuela de Datos con "Herramientas para Desarrolladores"
+:::
+
+---
+
+## Podemos también observar desde la consola
+
+Usaremos la librería *rvest* 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('rvest')
+escuela<-read_html("https://aulavirtual.escuelasol.cl/escuela-de-datos") 
+escuela
+```
+
+
+## Librería rvest 
+
+-   [rvest](https://rvest.tidyverse.org/) helps you scrape (or harvest) data from web pages. It is designed to work with [magrittr](https://github.com/tidyverse/magrittr) to make it easy to express common web scraping tasks, inspired by libraries like [beautiful soup](https://www.crummy.com/software/BeautifulSoup/) and [RoboBrowser](http://robobrowser.readthedocs.io/en/latest/readme.html).
+
+-   If you're scraping multiple pages, I highly recommend using rvest in concert with polite. The polite package ensures that you’re respecting the [robots.txt](https://en.wikipedia.org/wiki/Robots_exclusion_standard) and not hammering the site with too many requests.
+
+---
+
+::: {#fig-tablaescuela}
+[![](img/tablaescuela.png){width="70%"}](https://aulavirtual.escuelasol.cl/escuela-de-datos#scrollTop=0)
+
+Tabla Programa Escuela de datos
+:::
+
+## Exploramos el código html
+
+Buscamos las tablas presentes en el "documento" con *html_element*. Indica la presencia de un elemento.
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+escuela %>% html_element("table")
+```
+
+Extraemos la tabla con html_table y guardamos como *data frame*
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+escuela<-escuela %>% html_table(fill=TRUE, header=TRUE, na.strings="")
+escuela<-as.data.frame(escuela)
+```
+
+## Tenemos la información en bruto
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+escuela
+```
+
+## Extraemos los contenidos como vector
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+contenidos<-as.vector(escuela$Contenidos)
+contenidos
+```
+
+## Separamos el título de la descripción como lista
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+lista_contenidos<-strsplit(contenidos, split = "\n")
+lista_contenidos
+```
+
+
+## Se genera objeto clases con sapply
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+clases<-sapply(lista_contenidos,"[[",1)
+clases
+```
+
+## Se genera objeto descripción con sapply
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+descripcion<-sapply(lista_contenidos,"[[",2)
+descripcion
+```
+
+## Con herramientas tidyverse limpiamos datos
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('tidyverse')
+descripcion<-str_squish(descripcion)
+descripcion<-str_replace(descripcion, "\\s{2,}", "_")
+descripcion
+```
+
+## Separamos las fechas
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+fechas<-as.vector(escuela$Fechas.de.clase)
+lista_fechas<-strsplit(fechas, split = "\n")
+lista_fechas
+fechas_clases<-sapply(lista_fechas,"[[",1)
+fechas_practica<-sapply(lista_fechas,"[[",2)
+```
+
+
+## Limpiamos y separamos las fechas
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+fechas_clases<-gsub(".*:","",fechas_clases)
+fechas_clases<-str_squish(fechas_clases)
+fechas_practica<-gsub(".*:","",fechas_practica)
+fechas_practica<-str_squish(fechas_practica)
+fechas_clases
+fechas_practica
+```
+
+## Generamos dataframe y exportamos csv
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+escuela_datos<-as.data.frame(cbind(clases,fechas_clases,fechas_practica,descripcion))
+write.table(escuela_datos,file="/home/ubuk/Escritorio/escueladatos.csv",sep=";", row.names=FALSE,quote=FALSE,col.names=TRUE)
+```
+
+---
+
+::: {#fig-tablafinal}
+![](img/tabla-final.png){width="80%"}
+
+Tenemos nuestra tabla local
+:::
+
+## Veamos otros ejemplos en el código
