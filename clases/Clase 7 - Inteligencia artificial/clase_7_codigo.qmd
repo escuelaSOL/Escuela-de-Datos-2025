@@ -1,0 +1,344 @@
+---
+title: "Clase 7:  Inteligencia artificial en el mundo contemporáneo "
+author: "Fundación SOL"
+date: 06/15/2025
+date-format: "dddd, D MMM , YYYY"
+lang: es
+format:
+  pdf:
+    theme: night
+    incremental: true
+    logo: img/logoblanco.png
+    code-overflow: wrap
+project:
+  type: website
+  output-dir: docs
+---
+
+## Inteligencia Artificial
+
+-   La IA ha estado entre nosotros por más de 50 años, sin contar sus  predecesores. Pero ha sido solo recientemente que ésta ha captado el interés del público general debido al éxito que algunas técnicas de IA (como son las redes neuronales) han tenido al concretarse en productos comercializables para resolver problemas computacionales relacionados con el habla, la visión y la navegación autónoma [(UNESCO, 2024)](https://unesdoc.unesco.org/ark:/48223/pf0000391087).
+
+## ¿Qué es una IA?
+-   Un sistema de IA es un sistema digital que procesa y analiza información en su entorno para **actuar sobre él** -con cierto grado de autonomía- con el fin de alcanzar objetivos específicos [(UNESCO, 2024)](https://unesdoc.unesco.org/ark:/48223/pf0000391087). 
+
+-   ¿Qué implica el desarrollo reciente de este tipo de sistemas? 
+
+## Inteligencia Artificial Hoy (1)
+
+-   Actividades cotidianas, problemas tales como: ¿es la mente una
+manipulación de símbolos? ¿Puede una máquin comprender el lenguaje? Estas preocupaciones no son meramente teóricas sino que afectan directamente la vida de las personas. No es sorprendente que los medios de comunicación demuestren un constante interés en las ciencias cognitivas y la tecnología asociada con ellas, y que la inteligencia artificial haya penetrado profundamente en la mente de los jóvenes a través de los juegos de computación y la ciencia ficción...
+
+## Inteligencia Artificial Hoy (2)
+
+-  ...este interés popular es signo de una profunda transformación. Durante milenios los seres humanos han tenido una comprensión espontánea de su propia experiencia, una comprensión arraigada en el contexto de su tiempo y su cultura, y alimentada por dicho contexto. Ahora esta comprensión espontánea se enlaza inextricablemente con la ciencia, y puede ser transformada por ella [(Varela, 1997)](https://des-juj.infd.edu.ar/sitio/educacion-emocional-2019/upload/De_cuerpo_presente_-_Varela_Thompson_Roch.pdf). 
+
+
+## Inteligencia Artificial - Historia 
+
+-   Inteligencia artificial simbólica (enfoque cognitivista). Tuvo auge sobre todo en los 70, con el desarrollo de sistemas como por ejemplo, *sistemas expertos* (compuesto de una base de conocimientos y un motor de inferencia lógica).
+-   Estrategia conexionista: desarrollo de redes neuronales. Tiene antecedentes en los años 40 (McCulloch y Pitts, 1943), Hebb (1949) y los años 50 con el Perceptron (Rosenblatt, 1957). Será parte fundamental de estrategias actuales de Machine Learning. 
+
+## Aprendizaje en base a redes
+
+-   En 1949 Donald Hebb sugirió que el aprendizaje se podía basar en cambios cerebrales que surgen del grado de actividad correlativa entre las neuronas: si dos neuronas tienden a activarse juntas, la conexión entre ambas se fortalece; de lo contrario disminuye. Por ende, la conectividad del sistema se vuelve inseparable de su historia de transformación y se relaciona con la clase de tarea definida para el sistema. Como la verdadera acción se presenta en el nivel de las conexiones. [(Varela, 1997)](https://des-juj.infd.edu.ar/sitio/educacion-emocional-2019/upload/De_cuerpo_presente_-_Varela_Thompson_Roch.pdf). 
+
+---
+
+::: {#fig-rosenblatt}
+[![](img/rosenblatt.jpg){width="100%"}](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon)
+
+[Frank Rosenblatt 50's - Perceptron](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon).
+:::
+
+---
+
+::: {#fig-rosenblatt}
+[![](img/rosenblatt2.png){width="100%"}](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon)
+
+[Frank Rosenblatt 50's - Perceptron](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon).
+:::
+
+## Perceptron (1957)
+
+-   Inspirado en la interacción neuronal del cerebro, el perceptrón es una red neuronal de una sola capa: un algoritmo que clasifica la información en dos categorías posibles. La red neuronal realiza una predicción (por ejemplo, derecha o izquierda; o perro o gato) y, si es errónea, se ajusta para generar una predicción más precisa la próxima vez. Su precisión aumenta tras miles o millones de iteraciones.
+
+---
+
+::: {#fig-rosenblatt}
+[![](img/rosenblatt3.png){width="100%"}](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon)
+
+[Frank Rosenblatt 50's - Perceptron](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon).
+:::
+
+## Finales de los 70 
+
+Sólo a fines de la década de 1970 se produjo un explosivo resurgimiento
+de estas ideas, al cabo de veinticinco años de dominación de la ortodoxia cognitivista (lo que Daniel Dennett llama jovialmente "Computacionalismo de la Alta Iglesia"). Uno de los factores que contribuyó a este renovado interés fue por cierto el redescubrimiento paralelo de las ideas autoorganizativas en la física y la matemática
+no lineal, así como el fácil acceso a ordenadores rápidos...  [(Varela, 1997)](https://des-juj.infd.edu.ar/sitio/educacion-emocional-2019/upload/De_cuerpo_presente_-_Varela_Thompson_Roch.pdf). 
+
+## Conexionismo (1)
+
+-   La estrategia consiste en construir un sistema cognitivo no a partir de reglas y símbolos, sino a partir de componentes simples que se conecten dinámicamente entre sí de manera densa [(Varela, 1997)](https://des-juj.infd.edu.ar/sitio/educacion-emocional-2019/upload/De_cuerpo_presente_-_Varela_Thompson_Roch.pdf). 
+
+## Conexionismo (2) 
+
+-   Como el sistema está constituido como red, hay una cooperación global que emerge espontáneamente cuando los estados de todas las "neuronas" participantes alcanzan un estado mutuamente satisfactorio. En dicho sistema, pues, no se requiere una unidad procesadora central que
+guíe la operación [(Varela, 1997)](https://des-juj.infd.edu.ar/sitio/educacion-emocional-2019/upload/De_cuerpo_presente_-_Varela_Thompson_Roch.pdf). 
+
+
+## Machine Learning
+
+-   El Aprendizaje Automático es un área de la IA, enfocada en algoritmos capaces de *aprender* a partir de datos, sin necesidad de una programación directa. 
+-   *ML Supervisado*.- En su entrenamiento utiliza información con etiquetas correctas. 
+-   *ML No Supervisado*.- El algoritmo detecta por su propia cuenta relaciones subyacentes en los datos, sin necesidad de información previa.  
+
+
+## Veamos un ejemplo de Machine Learning
+
+Usaremos las librerías *neuralnet* y *caret*. También se utilizan paquetes como *keras* y *tensorflow* 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('neuralnet')
+library('caret')
+library('dplyr')
+```
+
+Utilizamos resultados del SIMCE para segundo medio en 2014 y 2024
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+simce2014<-read.csv("/home/ubuk/Escritorio/simce2m2014_rbd.csv",TRUE,sep="|")
+simce2024<-read.csv("/home/ubuk/Escritorio/simce2m2024_rbd.csv",TRUE,sep=";") 
+```
+
+## Usamos 2014 para entrenar
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+head(simce2014)
+```
+
+## Trataremos de predecir 2024
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+head(simce2024)
+```
+
+## Seleccionamos variables
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+simc2014<-as.data.frame(cbind(simce2014$rbd,simce2014$nom_rbd,simce2014$nom_com_rbd,simce2014$cod_grupo,simce2014$prom_lect2m_rbd,simce2014$prom_mate2m_rbd,simce2014$agno))
+simc2024<-as.data.frame(cbind(simce2024$rbd,simce2024$nom_rbd,simce2024$nom_com_rbd,simce2024$cod_grupo,simce2024$prom_lect2m_rbd,simce2024$prom_mate2m_rbd,simce2024$agno))
+clnams<-c("RBD","Nombre","Comuna","NSE","Lenguaje","Matemáticas","Año")
+colnames(simc2014)<-(clnams)
+colnames(simc2024)<-(clnams)
+```
+
+## Preparamos los datos
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+simc2014<-na.omit(simc2014)
+simc2014$Matemáticas<-as.numeric(simc2014$Matemáticas)
+simc2014$Lenguaje<-as.numeric(simc2014$Lenguaje)
+simc2014$NSE<-as.factor(simc2014$NSE)
+```
+
+## Generamos red neuronal con 3 nodos
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+NN = neuralnet(NSE ~ Matemáticas + Lenguaje,simc2014,hidden=3)
+```
+
+---
+
+::: {#fig-red}
+![](img/red.png){width="100%"}
+
+Red neuronal simce 2014 - 3 neuronas
+:::
+
+## Generamos una predicción para 2014
+
+Se genera una lista de 5 factores como resultado. 
+Debemos transformar para interpretar. 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+pred=neuralnet::compute(NN,simc2014[,c(5,6)])
+summary(pred)
+head(pred[["net.result"]])
+```
+
+## Transformamos Resultados
+
+Selección del mayor valor en cada columna 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+colnames(pred[["net.result"]]) <-c("a","b","c","d","e")
+predicho2014 <- simc2014 %>%
+  mutate(max_col = case_when(
+    pred$net.result[,1] == pmax(pred$net.result[,1],pred$net.result[,2],pred$net.result[,3],pred$net.result[,4],pred$net.result[,5]) ~ "Bajo",
+    pred$net.result[,2] == pmax(pred$net.result[,1],pred$net.result[,2],pred$net.result[,3],pred$net.result[,4],pred$net.result[,5])  ~ "Medio bajo",
+    pred$net.result[,3] == pmax(pred$net.result[,1],pred$net.result[,2],pred$net.result[,3],pred$net.result[,4],pred$net.result[,5])  ~ "Medio",
+    pred$net.result[,4] == pmax(pred$net.result[,1],pred$net.result[,2],pred$net.result[,3],pred$net.result[,4],pred$net.result[,5])  ~ "Medio alto" ,
+    pred$net.result[,5] == pmax(pred$net.result[,1],pred$net.result[,2],pred$net.result[,3],pred$net.result[,4],pred$net.result[,5])  ~ "Alto"
+  ))
+```
+
+## Predicción 2014
+
+Obtenemos la predicción SIMCE 2014
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+summary(predicho2014)
+```
+
+## Comparación 2014-2014
+
+Comparamos resultados efectivos con predicción
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+pred2014<-as.factor(predicho2014$max_col)
+original2014<-as.factor(simc2014$NSE)
+confusionMatrix(pred2014,original2014)
+```
+
+## Usamos nuestra red entrenada en 2014 para predecir 2024
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+simc2024<-na.omit(simc2024)
+simc2024$Matemáticas<-as.numeric(simc2024$Matemáticas)
+simc2024$Lenguaje<-as.numeric(simc2024$Lenguaje)
+simc2024$NSE<-recode(simc2024$NSE, `1` = "Bajo", `2` = "Medio bajo", `3` = "Medio", `4` =  "Medio alto", `5` = "Alto")
+pred24=neuralnet::compute(NN,simc2024[,c(5,6)])
+summary(pred24)
+head(pred24[["net.result"]])
+```
+
+## Obtenemos la predicción 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+summary(pred24)
+summary(pred24[["net.result"]])
+```
+
+## Transformamos Resultados (2024)
+
+Selección del mayor valor en cada columna 
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+colnames(pred24[["net.result"]]) <-c("a","b","c","d","e")
+predicho2024 <- simc2024 %>%
+  mutate(max_col = case_when(
+    pred24$net.result[,1] == pmax(pred24$net.result[,1],pred24$net.result[,2],pred24$net.result[,3],pred24$net.result[,4],pred24$net.result[,5]) ~ "Bajo",
+    pred24$net.result[,2] == pmax(pred24$net.result[,1],pred24$net.result[,2],pred24$net.result[,3],pred24$net.result[,4],pred24$net.result[,5])  ~ "Medio bajo",
+    pred24$net.result[,3] == pmax(pred24$net.result[,1],pred24$net.result[,2],pred24$net.result[,3],pred24$net.result[,4],pred24$net.result[,5])  ~ "Medio",
+    pred24$net.result[,4] == pmax(pred24$net.result[,1],pred24$net.result[,2],pred24$net.result[,3],pred24$net.result[,4],pred24$net.result[,5])  ~ "Medio alto" ,
+    pred24$net.result[,5] == pmax(pred24$net.result[,1],pred24$net.result[,2],pred24$net.result[,3],pred24$net.result[,4],pred24$net.result[,5])  ~ "Alto"
+  ))
+```
+
+## Predicción 2024
+
+Obtenemos la predicción SIMCE 2024 en base a nuestra red entrenada en 2014
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+summary(predicho2024)
+```
+
+## Matriz Comparación 2014-2024
+
+Comparamos resultados efectivos 2024 con predicción de red entrenada en 2014
+
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+pred2024<-as.factor(predicho2024$max_col)
+original2024<-as.factor(simc2024$NSE)
+confusionMatrix(pred2024,original2024)
+```
+
+## Mejorar los resultados
+
+-   ¿Qué te parecen los resultados? 
+-   ¿Cómo podemos mejorar los resultados de nuestra red de 3 neuronas?
+-   ¿Aprenderá mejor nuestra red si la entrenamos con más datos (SIMCE para todos los niveles)? 
+-   ¿Debemos agregar más nodos o neuronas en las capas no visibles?
+
+## De redes neuronales a Modelos de Lenguaje Natural 
+
+-   El procesamiento de lenguaje natural (NLP) es una tecnología de *machine learning* (deep learning) que brinda a las computadoras la capacidad de interpretar, manipular y comprender el lenguaje humano. Las compañías utilizan software de NLP para procesar de forma automática grandes volúmenes de datos de voz y texto de varios canales de comunicación, como correos electrónicos, mensajes de texto, vídeo, audio y más. Analizan y responden en tiempo real a la comunicación humana. [AWS](https://aws.amazon.com/es/what-is/nlp/) 
+
+## Modelos de IA como ChatGPT, Deepseek--r1, etc 
+
+-   GPT significa Generative Pre-trained Transformer. Es un modelo de inteligencia artificial desarrollado por OpenAI. Generative: Capacidad del modelo para generar texto. Pre-trained: El modelo ha sido entrenado previamente con grandes cantidades de texto de la web antes de ser afinado para tareas específicas. Transformer: Tipo de arquitectura de red neuronal que utiliza el modelo, diseñada para procesar secuencias de datos (como texto) de manera eficiente.
+
+## Deepseek-r1 
+
+-    Es un modelo de razonamiento, entrenado mediante large-scale reinforcement learning (RL) sin supervisión (no supervised fine-tuning - SFT) como primer paso (DeepSeek-R1-Zero) Para mejorar este modelo DeepSeek-R1, incorpora entrenamiento con datos antes del RL. Logrando resultados comparables a OpenAI-o1 en cálculo, programación y razonamiento. 
+
+---
+
+::: {#fig-chatbot}
+![](img/chatbot.png){width="100%"}
+
+Chatbots 
+:::
+
+## Algunas de las ia disponibles hoy
+
+-   Actualmente varias compañías ponen a disposición del público el uso en línea o la posibilidad de instalar localmente un modelo de inteligencia artificial. 
+-   Generalmente, en las plataformas de uso gratuito el pago son los datos que entregamos en nuestra interacción con el código. 
+-   Actualmente disponemos de herramientas para facilitar instalación y uso de modelos de inteligencia artificial, como **Ollama**. 
+
+---
+
+::: {#fig-ollama}
+[![](img/ollama.png){width="40%"}](https://ollama.com/)
+
+[Ollama - Instala un modelo local](https://ollama.com/) 
+:::

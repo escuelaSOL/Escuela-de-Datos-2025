@@ -1,0 +1,531 @@
+---
+# YAML
+title: "Publicación con Quarto"
+lang: es
+subtitle: "Ejemplo práctico con datos del IMCE FMA 2025"
+author: "Fundación SOL"
+date: 06-23-2025
+date-format: "dddd, D MMM, YYYY"
+format: 
+ revealjs: # presentación estilo diapositivas
+    theme: blood # estilo visual, fondo oscuro
+    css: styles.css # para personalizar el estilo
+    highlight-style: dracula # estilo para resaltar codigo
+    incremental: true # para que los ítems aparezcan uno a uno
+    logo: img\logoblanco.png 
+    echo: true # para visualizar el codigo R
+project: # arvicho quarto
+  type: website  #estructura de sitio web
+---
+
+## Introducción 
+
+Para practicar la generación de reportes abordaremos un ejemplo aplicado utilizando datos reales provenientes del **Informe Mensual de Calidad del Empleo (IMCE)** trimestre *febrero-abril 2025*.
+
+Este informe monitorea mes a mes, distintos aspectos de la calidad del empleo en Chile, más allás de las cifras oficiales.
+
+## IMCE FMA 2025
+
+::::: layout-column
+:::{.column width="40%"}
+![](img/portada_IMCE.png){width="300px"}
+:::
+:::{.column width="60%"}
+Puedes revisar el informe completo en el siguiente enlace:
+
+[Informe Mensual de Calidad del Empleo (IMCE) FMA 2025](https://fundacionsol.cl/blog/estudios-2/post/imce-febrero-abril-2025-7586)
+:::
+:::::
+
+## Aplicación
+
+::::: layout-column
+:::{.column width="40%"}
+![](img\empleo.png)
+:::
+:::{.column width="60%"}
+El análisis se enfocará en 3 tipos de empleo a nivel regional:
+
+-   [Empleo Protegido]{style="color:green"}
+-   [Inserción Endeble]{style="color:yellow"}
+-   [Empleo Informal]{style="color:red"}
+
+:::
+:::::
+
+## [Empleo Protegido]{style="color:green"}
+:::{.fragment}
+Todo empleo en el cual se cumpla con los atributos de contrato formal con protección laboral, es decir, un empleo con liquidación de sueldo, contrato escrito, cotizaciones previsionales, de salud, vacaciones y licencias pagadas, guardería, permiso por maternidad y seguro de cesantía.
+:::
+
+## [Inserción Endeble]{style="color:yellow"}
+:::{.fragment}
+Empleos clasificados como formales, no obstante, en la legalidad y en la práctica presentan condiciones que menoscaban la calidad del empleo y lo diferencian de un empleo protegido, aunque la medición oficial no los considere informales.
+:::
+
+:::{.fragment}
+En la práctica estos empleos no corresponden al estatuto formal del empleo, indefinido, con coberturas totales, derecho a organización, etc. Alguien externalizado, que trabaja en una gran empresa, no está en el "sector informal" (informalidad), pero si en la economía informal, según sugiere la OIT. 
+:::
+## [Empleo Informal]{style="color:red"}
+
+-   Asalariados/as o trabajadores/as del servicio doméstico que no cuentan con cotizaciones de salud (Isapre o Fonasa) y previsión social (AFP) por concepto de su vínculo laboral con un empleador.
+-   Familiares no remunerados del hogar.
+-   Trabajadores/as por cuenta propia y empleadores/as propietarios de una unidad económica del sector informal.
+-   Trabajadores/as asalariadas en unidades económicas informales.
+
+## Zonas del país
+
+-   Zona Norte: Arica y Parinacota, Tarapacá, Antofagasta, Atacama
+-   Zona Centro: Coquimbo y Valparaíso
+-   Zona Centro Sur: O'Higgins, Maule, Ñuble y Biobío
+-   Zona Sur: La Araucanía, Los Lagos y Los Ríos
+-   Zona Austral: Aysén y Magallanes y la Antártica Chilena
+
+```{r}
+#| eval: true
+#| echo: false
+library(readxl)
+library(knitr)
+library(dplyr)
+library(tidyr)
+library(scales) 
+library(ggplot2)
+
+datos <- read_excel("Data.xlsx")
+
+# definir zonas
+
+ zona_norte <-c("Arica y Parinacota", "Tarapacá", "Antofagasta", "Atacama")
+ zona_centro <-c("Coquimbo", "Valparaíso")
+ zona_centrosur <-c("O'Higgins", "Maule", "Ñuble","Biobío")
+ zona_sur <-c("La Araucanía", "Los Ríos", "Los Lagos")
+ zona_austral <-c("Aysén", "Magallanes y la Antártica Chilena")
+
+# Colores personalizados
+colores <- c(
+  "E. Protegido" = "#00B050",    # verde
+  "E. Informal"  = "#FF0000",    # rojo
+  "I. Endeble"   = "#FFD700"     # amarillo
+)
+
+```
+
+## Cifras de empleo zona norte
+
+```{r}
+#| eval: true
+#| echo: false
+zona_norte <- datos %>%
+  filter(Región %in% zona_norte) 
+kable(zona_norte, format = "html", booktabs = TRUE)
+
+zona_norte1 <-"Arica y Parinacota"
+zona_norte2 <-"Tarapacá"
+zona_norte3 <-"Antofagasta"
+zona_norte4 <-"Atacama"
+```
+
+## Distribución del tipo de empleo en `r zona_norte1`
+
+::::: layout-column
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 8
+#| fig-height: 6
+region <- zona_norte1
+# Filtrar y transformar los datos a formato largo
+datos_largos <- datos %>%
+  filter(Región == region) %>%
+  pivot_longer(cols = c(`E. Informal`, `I. Endeble`, `E. Protegido`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Graficar
+ggplot(datos_largos, aes(x = "", y = Proporcion, fill = Tipo)) +
+  geom_col(width = 1, color = "black") +
+  scale_fill_manual(values = colores) + 
+  coord_polar(theta = "y") +
+  geom_text(aes(label = percent(Proporcion, accuracy = 1)),
+            position = position_stack(vjust = 0.5), color = "white", size = 8) +
+  theme_void() +
+  theme(legend.title = element_blank(), legend.text = element_text(size = 20))
+
+```
+:::
+
+::: {.column width="50%"}
+-   **Protegido**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Protegido"], accuracy = 0.1)`
+
+-   **Endeble**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "I. Endeble"], accuracy = 0.1)`
+
+-   **Informal**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Informal"], accuracy = 0.1)`
+:::
+:::::
+
+## Distribución del tipo de empleo en `r zona_norte2`
+
+::::: layout-column
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 8
+#| fig-height: 6
+region <- zona_norte2
+# Filtrar y transformar los datos a formato largo
+datos_largos <- datos %>%
+  filter(Región == region) %>%
+  pivot_longer(cols = c(`E. Informal`, `I. Endeble`, `E. Protegido`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Graficar
+ggplot(datos_largos, aes(x = "", y = Proporcion, fill = Tipo)) +
+  geom_col(width = 1, color = "black") +
+  scale_fill_manual(values = colores) + 
+  coord_polar(theta = "y") +
+  geom_text(aes(label = percent(Proporcion, accuracy = 1)),
+            position = position_stack(vjust = 0.5), color = "white", size = 8) +
+  theme_void() +
+  theme(legend.title = element_blank(), legend.text = element_text(size = 20))
+
+```
+:::
+
+::: {.column width="50%"}
+-   **Protegido**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Protegido"], accuracy = 0.1)`
+
+-   **Endeble**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "I. Endeble"], accuracy = 0.1)`
+
+-   **Informal**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Informal"], accuracy = 0.1)`
+:::
+:::::
+
+## Distribución del tipo de empleo en `r zona_norte3`
+
+::::: layout-column
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 8
+#| fig-height: 6
+region <- zona_norte3
+# Filtrar y transformar los datos a formato largo
+datos_largos <- datos %>%
+  filter(Región == region) %>%
+  pivot_longer(cols = c(`E. Informal`, `I. Endeble`, `E. Protegido`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Graficar
+ggplot(datos_largos, aes(x = "", y = Proporcion, fill = Tipo)) +
+  geom_col(width = 1, color = "black") +
+  scale_fill_manual(values = colores) + 
+  coord_polar(theta = "y") +
+  geom_text(aes(label = percent(Proporcion, accuracy = 1)),
+            position = position_stack(vjust = 0.5), color = "white", size = 8) +
+  theme_void() +
+  theme(legend.title = element_blank(), legend.text = element_text(size = 20))
+
+```
+:::
+
+::: {.column width="50%"}
+-   **Protegido**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Protegido"], accuracy = 0.1)`
+
+-   **Endeble**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "I. Endeble"], accuracy = 0.1)`
+
+-   **Informal**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Informal"], accuracy = 0.1)`
+:::
+:::::
+
+## Distribución del tipo de empleo en `r zona_norte4`
+
+::::: layout-column
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 8
+#| fig-height: 6
+region <- zona_norte4
+# Filtrar y transformar los datos a formato largo
+datos_largos <- datos %>%
+  filter(Región == region) %>%
+  pivot_longer(cols = c(`E. Informal`, `I. Endeble`, `E. Protegido`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Graficar
+ggplot(datos_largos, aes(x = "", y = Proporcion, fill = Tipo)) +
+  geom_col(width = 1, color = "black") +
+  scale_fill_manual(values = colores) + 
+  coord_polar(theta = "y") +
+  geom_text(aes(label = percent(Proporcion, accuracy = 1)),
+            position = position_stack(vjust = 0.5), color = "white", size = 8) +
+  theme_void() +
+  theme(legend.title = element_blank(), legend.text = element_text(size = 20))
+
+```
+:::
+
+::: {.column width="50%"}
+-   **Protegido**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Protegido"], accuracy = 0.1)`
+
+-   **Endeble**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "I. Endeble"], accuracy = 0.1)`
+
+-   **Informal**: `r scales::percent(datos_largos$Proporcion[datos_largos$Tipo == "E. Informal"], accuracy = 0.1)`
+:::
+:::::
+
+## Cifras de empleo zona centro
+
+```{r}
+#| eval: true
+#| echo: false
+zona_centro <- datos %>%
+  filter(Región %in% zona_centro) 
+kable(zona_centro, format = "html", booktabs = TRUE)
+
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: false
+zona_centro <-c("Coquimbo", "Valparaíso")
+datos_largos <- datos %>%
+  filter(`Región` %in% zona_centro) %>%
+  pivot_longer(cols = c(`E. Protegido`, `I. Endeble`, `E. Informal`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Gráfico de barras agrupadas
+ggplot(datos_largos, aes(x = `Región`, y = Proporcion, fill = Tipo)) +
+  geom_col(position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = scales::percent(Proporcion, accuracy = 1)),
+            position = position_dodge(width = 0.9),
+            vjust = -0.3,
+            size = 5,
+            color = "black") +
+  labs(title = "Indicadores de empleo en la Zona Centro",
+       x = "Región", y = "Proporción") +
+  scale_fill_manual(values = colores) +
+  theme_minimal(base_size = 14)
+```
+
+La [inserción endeble]{style="color:yellow"} supera el 40% en ambas regiones de la zona centro.
+
+## Cifras de empleo zona centro sur
+
+```{r}
+#| eval: true
+#| echo: false
+zona_centrosur <- datos %>%
+  filter(Región %in% zona_centrosur) 
+kable(zona_centrosur, format = "html", booktabs = TRUE)
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: false
+#| 
+zona_centrosur <- c("O'Higgins", "Maule", "Ñuble", "Biobío")
+
+datos_largos <- datos %>%
+  filter(`Región` %in% zona_centrosur) %>%
+  pivot_longer(cols = c(`E. Protegido`, `I. Endeble`, `E. Informal`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Gráfico de barras apiladas
+ggplot(datos_largos, aes(x = `Región`, y = Proporcion, fill = Tipo)) +
+  geom_col(width = 0.7) +
+  scale_fill_manual(values = colores) +
+  labs(
+    title = "Distribución del empleo en la Zona Centro Sur",
+    x = "Región",
+    y = "Proporción"
+  ) +
+  theme_minimal(base_size = 14) +
+  geom_text(aes(label = scales::percent(Proporcion, accuracy = 1)),
+            position = position_stack(vjust = 0.5),
+            color = "black", size = 4)
+
+```
+
+La [inserción endeble]{style="color:yellow"} supera el 45% en las regiones de la zona centro sur. En el Maule y Ñuble la [informalidad]{style="color:red"} supera el 30%.
+
+## Cifras de empleo zona sur
+
+```{r}
+#| eval: true
+#| echo: false
+zona_sur <- datos %>%
+  filter(Región %in% zona_sur) 
+kable(zona_sur, format = "html", booktabs = TRUE)
+```
+
+## 
+
+```{r}
+#| eval: true
+#| echo: false
+zona_sur <- c("La Araucanía", "Los Ríos", "Los Lagos")
+
+# Filtrar datos
+datos_informal <- datos %>%
+  filter(`Región` %in% zona_sur) %>%
+  select(`Región`, `E. Informal`) %>%
+  arrange(desc(`E. Informal`))
+
+# Gráfico
+ggplot(datos_informal, aes(x = reorder(`Región`, `E. Informal`), y = `E. Informal`)) +
+  geom_col(fill = "#FF0000", width = 0.6) +
+  geom_text(aes(label = percent(`E. Informal`, accuracy = 0.1)),
+            hjust = -0.1, size = 5, color = "black") +
+  coord_flip() +
+  labs(
+    title = "Proporción del empleo informal en las regiones de la zona sur",
+    x = "Región",
+    y = " % porcentaje de informalidad"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    axis.text = element_text(size = 12),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, max(datos_informal$`E. Informal`) + 0.1))
+```
+La [informalidad]{style="color:red"} supera el 33% en La Araucanía y Los Ríos.
+
+## 
+
+```{r}
+#| eval: true
+#| echo: false
+
+# Filtrar datos
+datos_endeble <- datos %>%
+  filter(`Región` %in% zona_sur) %>%
+  select(`Región`, `I. Endeble`) %>%
+  arrange(desc(`I. Endeble`))
+
+# Gráfico
+ggplot(datos_endeble, aes(x = reorder(`Región`, `I. Endeble`), y = `I. Endeble`)) +
+  geom_col(fill = "#FFD700", width = 0.6) +
+  geom_text(aes(label = percent(`I. Endeble`, accuracy = 0.1)),
+            hjust = -0.1, size = 5, color = "black") +
+  coord_flip() +
+  labs(
+    title = "Proporción del empleo endeble en las regiones de la zona sur",
+    x = "Región",
+    y = "% porcentaje de empleo endeble"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    axis.text = element_text(size = 12),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1), 
+                     limits = c(0, max(datos_endeble$`I. Endeble`) + 0.1))
+```
+
+La [inserción endeble]{style="color:yellow"} casi llega al 50% en Los Lagos.
+
+## 
+
+```{r}
+#| eval: true
+#| echo: false
+# Filtrar datos
+datos_protegido <- datos %>%
+  filter(`Región` %in% zona_sur) %>%
+  select(`Región`, `E. Protegido`) %>%
+  arrange(desc(`E. Protegido`))
+
+# Gráfico
+ggplot(datos_protegido, aes(x = reorder(`Región`, `E. Protegido`), y = `E. Protegido`)) +
+  geom_col(fill = "#00B050", width = 0.6) +
+  geom_text(aes(label = percent(`E. Protegido`, accuracy = 0.1)),
+            hjust = -0.1, size = 5, color = "black") +
+  coord_flip() +
+  labs(
+    title = "Proporción del empleo protegido en las regiones de la zona sur",
+    x = "Región",
+    y = "% porcentaje de empleo protegido"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    axis.text = element_text(size = 12),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1),
+                     limits = c(0, max(datos_protegido$`E. Protegido`) + 0.1))
+```
+
+El [empleo protegido]{style="color:green"} supera el 30% en Los Ríos.
+
+## Cifras de empleo zona austral
+
+```{r}
+#| eval: true
+#| echo: false
+zona_austral <- datos %>%
+  filter(Región %in% zona_austral) 
+kable(zona_austral, format = "html", booktabs = TRUE)
+```
+
+##
+
+```{r}
+#| eval: true
+#| echo: false
+# Zona austral
+zona_austral <- c("Aysén", "Magallanes y la Antártica Chilena")
+
+# Reestructurar los datos
+datos_largos <- datos %>%
+  filter(`Región` %in% zona_austral) %>%
+  pivot_longer(cols = c(`E. Protegido`, `I. Endeble`, `E. Informal`),
+               names_to = "Tipo", values_to = "Proporcion")
+
+# Gráfico
+ggplot(datos_largos, aes(x = `Región`, y = Proporcion, fill = Tipo)) +
+  geom_col(width = 0.6) +
+  coord_flip() +
+  geom_text(aes(label = percent(Proporcion, accuracy = 1)),
+            position = position_stack(vjust = 0.5), color = "black", size = 4.5) +
+  scale_fill_manual(values = colores) +
+  labs(
+    title = "Distribución de tipo de empleo en la zona austral",
+    x = "Región",
+    y = "Proporción"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.text = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    legend.title = element_blank()
+  )
+```
+
+Aysén presenta un mayor nivel de [informalidad]{style="color:red"} e [inserción endeble]{style="color:yellow"} respecto a Magallanes y la Antártica Chilena.
+
+## Publicación del informe en la web
+
+En la terminal seguir los siguientes pasos:
+
+- Inicio de sesión en [Quarto Pub](https://quartopub.com/)
+- Debes de estar en la misma ruta que el archivo a publicar, puedes hacerlo con `cd C:\Users\...`
+- Luego `quarto publish quarto-pub archivo.qmd`
+- Seguir los pasos de la terminal
+
+

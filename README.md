@@ -23,7 +23,7 @@ Si participas del curso puedes acceder a las grabaciones de clase con tu contras
 
 ## 🗂️ Realiza tu entremiento semanal
 
-Desde el 10 de mayo al 5 de julio del 2025, se actualizarán las preguntas considerando los contenidos de clases. 
+Desde el 10 de mayo al 5 de julio del 2025, se actualizarán las preguntas considerando los contenidos de clases.
 
 [Accede aquí](https://escuelasol.github.io/entrenamiento_escuela_de_datos/)
 

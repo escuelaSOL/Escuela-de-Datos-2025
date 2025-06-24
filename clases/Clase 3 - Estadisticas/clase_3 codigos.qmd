@@ -1,0 +1,157 @@
+---
+title: "Clase 3: Uso de datos y estadísticas básicas"
+subtitle: "Introducción a la estadística para análisis de datos"
+format: pdf
+author: "Fundación SOL"
+date: 11/14/2024
+date-format: "dddd, D MMM , YYYY"
+theme: superhero
+echo: true
+---
+<!--format:
+      revealjs:
+        smaller: true
+        scrollable: true -->
+
+## Aprendamos sobre estadísticas descriptivas básicas
+
+Como hemos mencionado en clases, R dispone de múltiples *data frames* pre-cargadas. Estas "bases de datos" permiten realizar ejercicios para probar algunas funcionalidades de R. En este caso, recurriremos a la tabla [*air quality*](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html). 
+
+La función data() nos informa respecto a las bases de datos disponibles. 
+
+```{r}
+data() 
+```
+
+Guardamos la tabla *air quality* como data frame, con el nombre aire. 
+
+```{r}
+aire<-as.data.frame(airquality)
+```
+
+Extraemos la variable temperatura y creamos un vector. 
+
+```{r}
+temp<-as.vector(aire$Temp)
+```
+
+Convertimos la temperatura de Farenheit a Celcius, aplicando una fórmula.
+
+```{r}
+temperatura = (temp-32) / 1.8 
+```
+
+Al observar los datos, a simple vista, resulta complejo poder comprender la información. R cuenta con algunas herramientas que nos ayudarán a una inspección rápida de nuestros datos de temperatura. 
+
+```{r}
+temperatura
+```
+
+Podemos, por ejemplo, recurrir a la función *summary* para obtener 6 estadísticos descriptivos que nos ayudarán a interpretar los datos. 
+
+```{r}
+summary(temperatura)
+```
+
+También podemos extraer los estadísticos de forma directa. Primero obtenemos el promedio o media.
+
+Media: Se calcula mediante la suma de un conjunto de valores dividida entre el número total de sumandos.
+
+```{r} 
+mean(temperatura)
+```
+
+Luego obtenemos la mediana. 
+
+Mediana: Corresponde al valor central de la distribución al ordenar los datos de mayor a menor. 
+
+```{r}
+median(temperatura)
+```
+
+La varianza: corresponde a una medida de dispersión de los datos en relación a la media. Como en su fórmula se eleva al cuadrado no está en la misma unidad de medida que los datos. 
+
+```{r}
+var(temperatura)
+```
+
+La desviación estándar: Corresponde a una medida de desviación alternativa a la varianza, medida en la misma unidad que los datos. 
+
+```{r}
+sd(temperatura)
+``` 
+
+Luego obtenemos la Moda, recurriendo a una fórmula. (No profundizaremos en esto por el momento)
+
+Moda: Es el valor que más se repite.
+
+```{r}
+Mode <- function(x, na.rm = FALSE) {
+  if(na.rm){
+    x = x[!is.na(x)]
+  }
+
+  ux <- unique(x)
+  return(ux[which.max(tabulate(match(x, ux)))])
+}
+
+Mode(temperatura)
+```
+
+Mínimo 
+
+```{r}
+min(temperatura)
+``` 
+
+Máximo
+
+```{r}
+max(temperatura)
+```
+
+Cuantiles de distribución (25%): Nos permiten una primera noción sobre la distribución de los datos. 
+
+```{r}
+quantile(temperatura)
+```
+
+Histograma: nos permite analizar visualmente la distribución de frecuencia los datos.  
+
+```{r}
+hist(temperatura)
+```
+
+Lo comparamos con una curva normal para objetos de análisis. Una curva normal o distribución de Gauss es una distribución de probabilidad muy frecuente en la estadística y se asocia con la ley de los grandes números. Al ser una distribución típica, permite comparar para encontrar "distorsiones". 
+
+```{r}
+x <- seq(-4, 4, length=100)
+```
+
+```{r}
+y <- dnorm(x)
+```
+
+```{r}
+plot(x,y, type = "l", lwd = 2, axes = FALSE, xlab = "", ylab = "")
+axis(1, at = -3:3, labels = c("-3s", "-2s", "-1s", "mean", "1s", "2s", "3s"))
+```
+
+También podemos visualizar el promedio y la mediana en el mismo histograma anterior. ¿Se parece a una curva normal? Ejercicio: ¿Qué pasa si analizamos otras variables de la base de datos? ¿Cómo se comportan respecto a una normal? 
+
+```{r}
+hist(temperatura)
+abline(v = mean(temperatura),
+ col = "orange",
+ lwd = 2)
+abline(v = median(temperatura),
+ col = "red",
+ lwd = 2)
+```
+
+Diagrama de caja
+
+```{r}
+boxplot(temperatura)
+```
+
