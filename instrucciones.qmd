@@ -1,0 +1,33 @@
+---
+title: "Instrucciones trabajo final"
+subtitle: "Escuela de Datos /  Mayo-Julio 2025"
+author: "Fundacion SOL"
+format: pdf
+---
+
+A continuación se presentan los aspectos generales para el trabajo final, su desarrollo es necesario para la certificación de aprobación de contenidos de la Escuela de Datos.
+
+**Objetivo**: Crear un documento compilado con **Quarto** que desarrolle un análisis de datos utilizando funciones y librerías de `R`.
+
+### Aspectos formales
+
+- **Fecha de entrega**: 9 de agosto 
+- Extensión: máximo de 10 páginas
+- Contenido: 
+	a) identificación de autor/autora
+	b) resumen 
+	c) objetivo del análisis
+	d) metodología de análisis
+	e) principales hallazgos
+	f) conclusiones
+	g) fuentes consultadas
+	f) tema de libre elección, utilizando un enfoque crítico.
+	g) considere agregar todos los comentarios necesarios para explicar las técnicas y funciones utilizadas en su código.
+
+### Envío del trabajo:
+
+Correo: **escuelasol@fundacionsol.cl** 
+
+Asunto: **Trabajo final escuela de datos 2025**.
+
+El trabajo puede ser publicado en un servidor de quarto, en este caso se debe enviar el enlace del html, o renderizado en pdf, en ambos casos de debe acompañar el archivo  **.qmd**  en el envío del correo. 

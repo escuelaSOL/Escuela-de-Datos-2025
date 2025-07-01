@@ -1,0 +1,76 @@
+---
+title: "Breve análisis en R"
+format: html
+---
+
+
+# Presentación 
+
+Este es un breve reporte de los aportes a las candidaturas primarias de Chile en 2025. 
+
+```{r carga}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Carga de librerias
+library(tidyverse)
+
+ruta <- "C:/Users/rgalv/Nextcloud/2025/Escuela de datos/clases_EDD2025/clases/Clase 8 practica/publicar_con_quarto/archivos/Reporte_Aportes_PRIMARIAS_2025.xlsx"
+
+# "../archivos/Reporte_Aportes_PRIMARIAS_2025.xlsx"
+
+# Carga de datos 
+planilla <- openxlsx::read.xlsx(ruta,
+                                startRow = 8,
+                                detectDates = TRUE) |> 
+              janitor::clean_names()
+
+# vistazo de las variables al archivo
+# glimpse(planilla)
+
+# planilla |> view()
+
+```
+
+
+```{r procesamiento}
+#| echo: false
+#| include: false
+
+# visualizamos una variable de la planilla y contamos las observaciones
+planilla |> 
+  count(nombre_candidato_partido_politico)
+  
+# creamos un vector con los nombres de las candidaturas a primarias
+candidatura_primarias <- c("CAROLINA TOHA MORALES", "GONZALO WINTER ETCHEBERRY",
+                            "JAIME MULET MARTINEZ", "JEANNETTE JARA ROMAN")
+
+# realizamos filtros y sumarios  
+planilla |> 
+  filter(tipo_de_aporte == "APORTE CON PUBLICIDAD",
+     nombre_candidato_partido_politico == "JAIME MULET MARTINEZ") |> 
+  summarise(total = sum(monto), 
+            n_aportes = n())
+```
+
+
+```{r procesamiento2}
+# realizamos filtros y sumarios de categorias específicas
+tabla1 <- planilla |> 
+  filter(tipo_de_aporte == "APORTE CON PUBLICIDAD",
+        nombre_candidato_partido_politico%in%candidatura_primarias) |> 
+  group_by(nombre_candidato_partido_politico) |> 
+  summarise(total = sum(monto), 
+            n_aportes = n()) |> 
+  mutate(aporte_pp = total / n_aportes) |> 
+  arrange(-total)
+
+```
+
+```{r tabla1}
+#| echo: false
+tabla1 |> kableExtra::kable()
+```
+
+

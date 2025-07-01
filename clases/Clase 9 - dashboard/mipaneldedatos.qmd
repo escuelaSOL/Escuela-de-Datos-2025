@@ -1,0 +1,185 @@
+---
+title: "Mi panel de datos"
+format: 
+    dashboard:
+        theme: minty
+        scrolling: true
+        orientation: rows
+        logo: img/logoblanco.png
+        nav-buttons:
+            - icon: github
+              href: https://github.com/escuelaSOL/Escuela-de-Datos-2025
+
+---
+
+# Presentación
+
+¿Qué es un panel o tablero de visualización de datos (dashboard)? 
+
+-   Básicamente consta de un conjunto de cajas o tarjetas (cards). Las cuales se organizan en filas y columnas. Por defecto se basa en filas, pero puede setearse a columnas. 
+
+-   Se utilizan para facilitar la visualización de datos, permitiendo la interacción del/a usuario/a.
+
+-   Utilizamos cabeceras para cambiar el aspecto de nuestro panel, crear pestañas, filas y columnas. 
+
+-   Permiten facilitar el acceso a la información a personas sin conocimiento técnico. 
+
+-   Pueden alojarse en un sitio web y actualizarse en tiempo real. 
+
+-   Existen varios [temas disponibles](https://quarto.org/docs/dashboards/theming.html), así como [íconos](https://icons.getbootstrap.com/) que nos permiten mejorar el aspecto de la presentación. 
+
+-   A continuación veremos algunos ejemplos prácticos para aplicar lo que ya sabemos de R en la creación de nuesto panel de datos. 
+
+
+# IMDB Top 25
+
+## {.sidebar}
+Acá presentamos un ejemplo con una de las tablas que trabajamos en clases anteriores del curso de R. Este panel de datos muestra información clave sobre las 25 mejores películas de la historia según IMDB. En este caso se utilizan las funciones gráficas de R base. 
+
+## Column {.tabset}
+
+```{r}
+#| echo: FALSE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('rvest') 
+library('tidyverse')
+library('xml2')
+peliculas<-read_html("https://www.imdb.com/chart/top/")
+#peliculas %>% html_elements("table")
+titulo<-html_nodes(peliculas,".ipc-title-link-wrapper") %>% html_text
+metadatos<-html_nodes(peliculas,".cli-title-metadata") %>% html_text
+year<-as.numeric(substr(metadatos,1,4))
+duracion<-substr(metadatos,5,9)
+rating<-substr(metadatos,10,20)
+top25<-as.data.frame(cbind(titulo,year,duracion,rating))
+```
+
+### Listado Top25 IMDB
+
+```{r}
+#| title: "Listado"
+#| echo: FALSE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('knitr')
+top25_n<-as.data.frame(top25)
+colnames(top25_n) <- c('Título','Año','Duración',"Rating")
+knitr::kable(top25_n)
+```
+
+Listado de las 25 películas más populares de IMDB. 
+Actualizado al `{r} Sys.time()`. 
+
+### Histograma
+
+```{r}
+#| title: ¿Cuál fue la mejor década del cine?
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+top25$year<-as.numeric(top25$year)
+media=mean(top25$year)
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+moda=Mode(top25$year)
+hist(year, col='orange',xlab = 'Año de la película', ylab = 'Número de películas en el Top 25', main = 'Histograma de los años de estreno de las 25 películas más populares (IMDB)') 
+abline(v = media, col = 'red', lwd = 2, lty = 'dashed')
+abline(v = moda, col = 'blue', lwd = 2, lty = 'dashed')
+axis(side=1, at=seq(1940,2020,10), labels=seq(1940,2020,10))
+legend("topright", c("Moda", "Media"), fill=c("blue", "red"))
+```
+
+En este caso se puede observar como la media de `{r} media` y la moda de `{r} moda` se expresan en la gráfica. En este caso sería interesante revisar las películas del año con mayor cantidad de estrenos en la lista del top 25.
+
+#### Column 2 {.flow}
+
+```{r}
+#| content: valuebox
+#| title: "Media"
+list(
+  icon = "film",
+  color = "danger",
+  value = media
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Moda"
+list(
+  icon = "film",
+  color = "danger",
+  value = moda
+)
+```
+
+### Películas de 1994
+
+```{r}
+#| title: "Listado de 1994"
+#| echo: FALSE
+#| eval: TRUE
+#| code-line-numbers: "1"
+library('knitr')
+top25_n$Año<-as.numeric(top25_n$Año)
+top25_n94<-subset(top25_n,Año ==1994)
+knitr::kable(top25_n94)
+```
+
+#### Column 3 {.flow}
+
+**Sueños de libertad o Cadena perpetua**
+
+::: {#fig-mov1}
+[![](img/mov1){width="50%"}](https://www.imdb.com/es-es/title/tt0111161/?ref_=chttp_i_1)
+
+[Sueños de libertad o Cadena Perpetua](https://www.imdb.com/es-es/title/tt0111161/?ref_=chttp_i_1).
+:::
+
+**Tiempos violentos**
+
+::: {#fig-mov2}
+[![](img/mov2){width="40%"}](https://www.imdb.com/es-es/title/tt0111161/?ref_=chttp_i_1)
+
+[Tiempos violentos](https://www.imdb.com/es-es/title/tt0111161/?ref_=chttp_i_1).
+:::
+
+**Forrest Gump**
+
+::: {#fig-mov3}
+[![](img/mov3){width="50%"}](https://www.imdb.com/es-es/title/tt0111161/?ref_=chttp_i_1)
+
+[Forrest Gump](https://www.imdb.com/es-es/title/tt0111161/?ref_=chttp_i_1).
+:::
+
+# Usando ggplot 
+
+```{r}
+#| title: "Datos Salario Mínimo y Línea de Pobreza"
+#| echo: FALSE
+#| eval: TRUE
+#| code-line-numbers: "1"
+monto<-c(238705,387778,430024,515047,629947)
+salm<-c("LP1","LP2","SML","LP3","LP4") 
+datos<-data.frame(salm,monto)
+```
+
+```{r}
+#| title: "Datos Salario Mínimo y Línea de Pobreza: ejemplo ggplot"
+#| echo: TRUE
+#| eval: TRUE
+#| code-line-numbers: "1"
+theme_set(theme_classic())
+ggplot(data=datos, aes(x=salm, y=monto)) +
+geom_bar(stat="identity",fill="thistle3",width=0.7,position='dodge') + 
+geom_text(aes(label=scales::dollar(monto,big.mark = ".", decimal.mark = ",")),size=6,fontface="bold",vjust=-0.6) +
+theme(axis.text.x = element_text(vjust=.8,size=12,face="bold")) +
+theme(axis.text.y = element_text(vjust=.8,size=14,face="bold")) +
+geom_hline(yintercept=515047, color="cyan4",linewidth=1)+
+scale_y_continuous(limit = c(0,650000),breaks=seq(0,650000,50000),labels = scales::dollar_format(big.mark = ".", decimal.mark = ",",accuracy = 1))+
+    ylab("Monto $ (Línea de pobreza a mayo 2025)")+
+    xlab("Valores")
+```
